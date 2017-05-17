@@ -41,7 +41,7 @@ import com.gamater.dialog.OKgameDialogProcess;
 import com.gamater.dialog.SdkDialogViewManager;
 import com.gamater.dialog.SdkGameDialog;
 import com.gamater.dialog.util.DialogUtil;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.payment.GamaterIABListener;
 import com.gamater.receiver.InstallReceiver;
 import com.gamater.sdk.common.WinType;
@@ -59,7 +59,6 @@ import com.gamater.util.ResourceUtil;
 import com.google.ads.conversiontracking.AdWordsConversionReporter;
 import com.tony.facebook.SdkFacebookDialog;
 import com.tony.floatmenu.SDKMenuManager;
-import com.vsgm.sdk.SDKActivity;
 
 public class GamaterSDK {
 	public final static String LOG_TAG = "1.2.2";
@@ -126,7 +125,7 @@ public class GamaterSDK {
 		DeviceInfo info = DeviceInfo.getInstance(activity);
 		checkSdkCallMethod();
 		setConfig(isShowLog, clientId);
-		AcGameIAB.getInstance(activity, isShowLog);
+		GamaterIAB.getInstance(activity, isShowLog);
 		MobUserManager.initUserManager(activity, isShowLog);
 		SDKMenuManager.getInstance(activity);
 		AppListCollecter.init(activity);
@@ -216,7 +215,7 @@ public class GamaterSDK {
 	}
 
 	public void initPayment(List<String> skus, GamaterIABListener listener) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		mIab.init(skus);
 		mIab.setAcGameIABListener(listener);
 	}
@@ -328,7 +327,7 @@ public class GamaterSDK {
 		user.setServerName(serverName);
 		user.setLevel(roleLevel);
 		user.setProfession(profession);
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null)
 			mIab.roleReport(user.getUserid(), profession, serverId, serverName, roleId, rolesName, roleLevel);
 	}
@@ -374,7 +373,7 @@ public class GamaterSDK {
 		SdkDialogViewManager.dialogDismiss();
 		SdkDialogViewManager.destory();
 		MobUserManager.getInstance().destroy();
-		AcGameIAB.getInstance().destroy();
+		GamaterIAB.getInstance().destroy();
 		m_instance = null;
 	}
 
@@ -445,7 +444,7 @@ public class GamaterSDK {
 	}
 
 	public void paymentDefault(PaymentParam param) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null) {
 			mIab.payment(param);
 		} else {
@@ -454,7 +453,7 @@ public class GamaterSDK {
 	}
 
 	public void paymentDefault(Activity a, PaymentParam param) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null) {
 			mIab.payment(a, param);
 		} else {
@@ -463,13 +462,13 @@ public class GamaterSDK {
 	}
 
 	public void paymentOther(Activity activity, PaymentParam param) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null)
 			mIab.paymentOther(activity, param);
 	}
 
 	public void paymentOther(PaymentParam param) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null)
 			mIab.paymentOther(param);
 	}
@@ -531,16 +530,16 @@ public class GamaterSDK {
 	}
 
 	private void checkFailedOrder() {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab == null) {
-			mIab = AcGameIAB.getInstance(activity, Config.isShowLog);
+			mIab = GamaterIAB.getInstance(activity, Config.isShowLog);
 		}
 		mIab.checkFailedOrder();
 		CrashHandler.sendResponseTime(activity);
 	}
 
 	public boolean handlerResult(int requestCode, int resultCode, Intent data) {
-		AcGameIAB mIab = AcGameIAB.getInstance();
+		GamaterIAB mIab = GamaterIAB.getInstance();
 		if (mIab != null)
 			return mIab.handlerResult(requestCode, resultCode, data);
 		return false;
@@ -610,7 +609,7 @@ public class GamaterSDK {
 							}
 							if (ids.length() > 0) {
 								FacebookHelper.getInstance().setInviteNames(name);
-								Intent intent = new Intent(activity, Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+								Intent intent = new Intent(activity, MVMainActivity.class);
 								intent.putExtra(MVMainActivity.WIN_TYPE, WinType.FbInviteFriend.toString());
 								intent.putExtra("friend_ids", ids);
 								intent.putExtra("friend_names", names);

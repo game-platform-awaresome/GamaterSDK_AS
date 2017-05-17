@@ -1,4 +1,4 @@
-package com.vsgm.sdk;
+package com.gamater.sdk.common;
 
 import android.Manifest;
 import android.app.Activity;

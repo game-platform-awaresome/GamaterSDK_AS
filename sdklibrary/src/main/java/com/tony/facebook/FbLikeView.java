@@ -39,7 +39,6 @@ import com.gamater.sdk.facebook.FacebookHelper;
 import com.gamater.sdk.game.MVMainActivity;
 import com.gamater.util.ResourceUtil;
 import com.tony.viewinterface.BaseOnClickListener;
-import com.vsgm.sdk.SDKActivity;
 
 public class FbLikeView extends LinearLayout implements HttpEventListener {
 
@@ -81,7 +80,7 @@ public class FbLikeView extends LinearLayout implements HttpEventListener {
 					@Override
 					public void run() {
 						// new SdkGameWebViewDialog(getContext(),WebViewType.Facebook).show();
-						Intent intent = new Intent(getContext(),Config.isGmLogo ? SDKActivity.class: MVMainActivity.class);
+						Intent intent = new Intent(getContext(), MVMainActivity.class);
 						intent.putExtra("URL", MobUserManager.getInstance().getFbUrl());
 						intent.putExtra(MVMainActivity.WIN_TYPE, WinType.Web.toString());
 						getContext().startActivity(intent);

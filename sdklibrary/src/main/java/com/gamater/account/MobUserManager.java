@@ -30,7 +30,7 @@ import com.gamater.common.http.MD5;
 import com.gamater.common.http.WebAPI;
 import com.gamater.define.DeviceInfo;
 import com.gamater.define.SPUtil;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.sdk.common.ConfigUtil;
 import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.util.AppUtil;
@@ -740,13 +740,13 @@ public class MobUserManager {
 						}
 
 						SPUtil.setConfigJsonString(GamaterSDK.getInstance().getActivity(), configStr);
-						AcGameIAB.getInstance().checkIabSetup();
+						GamaterIAB.getInstance().checkIabSetup();
 						ConfigUtil.initConfigWithConfigJson(configJson);
 						String facebookid = configJson.optString(MobUserManager.CONFIG_KEY_FB);
 						if (facebookid != null && facebookid.length() > 0) {
 							FacebookSdk.setApplicationId(facebookid);
-							FacebookSdk.sdkInitialize(AcGameIAB.getInstance().getContext());
-							AppEventsLogger.deactivateApp(AcGameIAB.getInstance().getContext(), facebookid);
+							FacebookSdk.sdkInitialize(GamaterIAB.getInstance().getContext());
+							AppEventsLogger.deactivateApp(GamaterIAB.getInstance().getContext(), facebookid);
 						}
 
 						// 根据服务器下发的statType 选择使用哪一个统计

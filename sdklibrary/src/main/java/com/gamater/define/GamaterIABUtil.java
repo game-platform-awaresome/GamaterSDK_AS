@@ -4,7 +4,7 @@ import com.gamater.common.http.MD5;
 import com.gamater.common.http.MVHttpRequest;
 import com.gamater.common.http.WebAPI;
 
-public class AcGameIABUtil {
+public class GamaterIABUtil {
 
 	public static void initRequestOrderIdParam(MVHttpRequest request, PaymentParam param) {
 		long time = System.currentTimeMillis() / 1000;

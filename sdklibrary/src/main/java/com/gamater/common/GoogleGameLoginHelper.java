@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -21,9 +20,8 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.plus.Plus;
-import com.vsgm.permission.PermissionCallback;
-import com.vsgm.permission.PermissionManager;
-import com.vsgm.sdk.SDKActivity;
+import com.gamater.sdk.permission.PermissionCallback;
+import com.gamater.sdk.permission.PermissionManager;
 
 /**
  * Google游戏登录相关操作类
@@ -132,9 +130,7 @@ public class GoogleGameLoginHelper {
 						mConnectionResult = result;
 						if (result.hasResolution()) {
 							LogUtil.printHTTP("google onConnectionFailed hasResolution");
-							Intent intent = new Intent(activity,
-									Config.isGmLogo ? SDKActivity.class
-											: MVMainActivity.class);
+							Intent intent = new Intent(activity, MVMainActivity.class);
 							intent.putExtra(MVMainActivity.WIN_TYPE,
 									WinType.GoogleGame.toString());
 							GamaterSDK.getInstance().getActivity()

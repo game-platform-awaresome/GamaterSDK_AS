@@ -26,7 +26,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
-import com.vsgm.sdk.VsgmEncrypt;
+import com.gamater.sdk.common.GamaterEncrypt;
 
 /**
  * 
@@ -282,7 +282,7 @@ public class HttpRequest extends Thread implements Serializable {
 						index++;
 					}
 				}
-				String result = VsgmEncrypt.encrypt(ctx, params);
+				String result = GamaterEncrypt.encrypt(ctx, params);
 				json.put(signatureKey, result);
 				LogUtil.printHTTP(json.toString());
 				return result;

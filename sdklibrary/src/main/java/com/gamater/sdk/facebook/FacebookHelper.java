@@ -26,7 +26,6 @@ import com.gamater.sdk.common.WinType;
 import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.sdk.game.MVMainActivity;
 import com.gamater.util.LogUtil;
-import com.vsgm.sdk.SDKActivity;
 
 public class FacebookHelper {
 	private static FacebookHelper mInstance;
@@ -184,7 +183,7 @@ public class FacebookHelper {
 			o.put("picture", "" + pictureURL);
 		} catch (Exception e) {
 		}
-		Intent i = new Intent(ctx, Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+		Intent i = new Intent(ctx, MVMainActivity.class);
 		i.putExtra(MVMainActivity.WIN_TYPE, WinType.FBShare.toString());
 		i.putExtra("shareData", o.toString());
 		ctx.startActivity(i);
@@ -192,8 +191,7 @@ public class FacebookHelper {
 
 	public void fbLogin(FacebookCallback<LoginResult> callback) {
 		LoginManager.getInstance().registerCallback(FacebookHelper.getInstance().newCallbackManager(), callback);
-		Intent intent = new Intent(GamaterSDK.getInstance().getActivity(),
-				Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+		Intent intent = new Intent(GamaterSDK.getInstance().getActivity(),MVMainActivity.class);
 		intent.putExtra(MVMainActivity.WIN_TYPE, WinType.FbLogin.toString());
 		GamaterSDK.getInstance().getActivity().startActivity(intent);
 	}

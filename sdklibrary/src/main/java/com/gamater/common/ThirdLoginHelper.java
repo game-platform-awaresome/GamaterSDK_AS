@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.facebook.FacebookCallback;
@@ -22,7 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.vsgm.sdk.SDKActivity;
 
 public class ThirdLoginHelper {
 	private static ThirdLoginHelper instance;
@@ -80,11 +80,10 @@ public class ThirdLoginHelper {
 
 //		String googleClientId = ctx.getResources().getString(ResourceUtil.getStringId("vsgm_google_client_id"));
 		String googleClientId = AppUtil.GetMetaDataString(GamaterSDK.getInstance().getContext(), "gamater_google_client_id");
-		GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-				.requestIdToken(googleClientId)
-				.requestEmail().build();
+//		Log.e("Tobin","googleClientId: " + googleClientId);
+		GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(googleClientId).requestEmail().build();
 		mGoogleApiClient = new GoogleApiClient.Builder(ctx).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
-		Intent intent = new Intent(ctx, Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+		Intent intent = new Intent(ctx, MVMainActivity.class);
 		intent.putExtra(MVMainActivity.WIN_TYPE, WinType.GoogleLogin.toString());
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		ctx.startActivity(intent);

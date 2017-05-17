@@ -27,7 +27,7 @@ import com.gamater.define.DeviceInfo;
 import com.gamater.define.GPOrder;
 import com.gamater.define.PaymentParam;
 import com.gamater.define.SPUtil;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.payment.PaymentHttpRequest;
 import com.gamater.payment.PaymentHttpRequest.OrderIdCallback;
 import com.gamater.util.LogUtil;
@@ -98,8 +98,8 @@ public class GPIabPay {
 			@Override
 			public void onIabSetupFinished(IabResult result) {
 				if (!result.isSuccess()) {
-					if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-						AcGameIAB.getInstance().getAcGameIABListener().setupHelperFailed();
+					if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+						GamaterIAB.getInstance().getAcGameIABListener().setupHelperFailed();
 					}
 					return;
 				}
@@ -149,14 +149,14 @@ public class GPIabPay {
 		@Override
 		public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
 			if (helper == null) {
-				if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-					AcGameIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
+				if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+					GamaterIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
 				}
 				return;
 			}
 			if (result.isFailure()) {
-				if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-					AcGameIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
+				if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+					GamaterIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
 				}
 				return;
 			}
@@ -185,10 +185,10 @@ public class GPIabPay {
 							order.setPayToken(purchase.getToken());
 							order.setGoogleOrderId(purchase.getOrderId());
 							SPUtil.saveOrder(order.toJSON(), activity);
-							AcGameIAB.getInstance().paymentValidate(order);
+							GamaterIAB.getInstance().paymentValidate(order);
 
-							if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-								AcGameIAB.getInstance().getAcGameIABListener().paymentSuccess(order);
+							if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+								GamaterIAB.getInstance().getAcGameIABListener().paymentSuccess(order);
 							}
 							break;
 						}
@@ -197,8 +197,8 @@ public class GPIabPay {
 					}
 				}
 			} else {
-				if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-					AcGameIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
+				if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+					GamaterIAB.getInstance().getAcGameIABListener().paymentFailed(result.getMessage());
 				}
 			}
 		}
@@ -286,8 +286,8 @@ public class GPIabPay {
 							order.setExtra(param.getExtra());
 							SPUtil.saveOrder(order.toJSON(), activity);
 							if (helper != null) {
-								if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-									AcGameIAB.getInstance().getAcGameIABListener().paymentStart(param.getSku());
+								if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+									GamaterIAB.getInstance().getAcGameIABListener().paymentStart(param.getSku());
 								}
 								helper.launchPurchaseFlow(activity, param.getSku(), 1234, mPurchaseFinishedListener, orderId);
 							}
@@ -297,8 +297,8 @@ public class GPIabPay {
 					}
 				}
 			});
-		} else if (AcGameIAB.getInstance().getAcGameIABListener() != null) {
-			AcGameIAB.getInstance().getAcGameIABListener().setupHelperFailed();
+		} else if (GamaterIAB.getInstance().getAcGameIABListener() != null) {
+			GamaterIAB.getInstance().getAcGameIABListener().setupHelperFailed();
 		}
 	}
 

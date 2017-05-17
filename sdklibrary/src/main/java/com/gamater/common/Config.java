@@ -3,7 +3,7 @@ package com.gamater.common;
 public class Config {
 	// 0 test、 2 pre 、 其它正式
 	public static int isTestMode = 1;
-
+	// 支付展示类型 1 Google 2 Google和第三方
 	public static int payType = 1;
 
 	public static boolean isShowLog = true;

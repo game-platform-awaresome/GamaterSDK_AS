@@ -233,5 +233,13 @@
     <string name="vsgm_tony_google_logout">[登出]</string>
     <string name="vsgm_tony_google_leaderboards">排行榜</string>
     <string name="vsgm_tony_google_achievement">成就</string>
+    <string name="vsgm_my_v_coins">我的平台币：</string>
+    <string name="vsgm_new_account_gift_coin">送平台币</string>
+    <string name="vsgm_pay_select_type_coins_rate">选平台币支付，享%1$d%%加码</string>
+    <string name="vsgm_pay_v_coins_lack">平台币数量不足，请充值</string>
+    <string name="vsgm_pay_v_coins_top_up">平台币充值</string>
+    <string name="vsgm_pay_with_v_coins">平台币支付</string>
+    <string name="vsgm_tony_new_account_upgrade"><u>升级为%s会员</u></string>
+    <string name="vsgm_v_coins">平台币</string>
 
 </resources>

@@ -2,7 +2,7 @@ package com.gamater.sdk.imagepicker;
 
 import com.tony.view.ImagePickerView;
 import com.tony.view.ImagePickerView.ImagePickerViewListener;
-import com.vsgm.sdk.PermissionUtil;
+import com.gamater.sdk.common.PermissionUtil;
 
 import android.Manifest;
 import android.app.Activity;

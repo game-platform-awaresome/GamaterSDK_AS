@@ -62,7 +62,7 @@ jstring crypt(JNIEnv *env, jclass type, jstring before) {
 
 extern "C"
 jstring
-Java_com_vsgm_sdk_VsgmEncrypt_encrypt(JNIEnv *env, jclass type, jobject context, jobjectArray params) {
+Java_com_gamater_sdk_common_GamaterEncrypt_encrypt(JNIEnv *env, jclass type, jobject context, jobjectArray params) {
     // 获得数组的长度
     jsize len = env->GetArrayLength(params);
     // 向系统申请分配指定size(1024*1024)个字节的内存空间

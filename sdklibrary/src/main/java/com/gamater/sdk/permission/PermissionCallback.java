@@ -1,4 +1,4 @@
-package com.vsgm.permission;
+package com.gamater.sdk.permission;
 
 import java.util.List;
 

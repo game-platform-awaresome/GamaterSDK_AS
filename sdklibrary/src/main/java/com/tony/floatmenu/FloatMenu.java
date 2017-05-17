@@ -32,7 +32,6 @@ import com.gamater.util.ResourceUtil;
 import com.tony.sdkview.SdkViewOpenHelper;
 import com.tony.view.FloatMenuHorizontalScrollView;
 import com.tony.viewinterface.BaseOnClickListener;
-import com.vsgm.sdk.SDKActivity;
 
 public class FloatMenu extends FrameLayout {
 	private Activity mActivity;
@@ -277,7 +276,7 @@ public class FloatMenu extends FrameLayout {
 		builder.setPositiveButton(done, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Intent intent = new Intent(mActivity, Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+				Intent intent = new Intent(mActivity, MVMainActivity.class);
 				intent.putExtra(MVMainActivity.WIN_TYPE, WinType.UpgradeAccount.toString());
 				mActivity.startActivity(intent);
 			}

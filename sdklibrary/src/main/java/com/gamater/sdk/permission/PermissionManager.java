@@ -1,4 +1,4 @@
-package com.vsgm.permission;
+package com.gamater.sdk.permission;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -12,11 +12,9 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-import com.gamater.common.Config;
 import com.gamater.sdk.common.WinType;
 import com.gamater.sdk.game.MVMainActivity;
 import com.gamater.util.LogUtil;
-import com.vsgm.sdk.SDKActivity;
 
 public class PermissionManager {
 	private static final int REQUEST_CODE_PERMISSION = 0x38;
@@ -99,8 +97,7 @@ public class PermissionManager {
     }
 
     private synchronized void startAcpActivity() {
-		Intent intent = new Intent(context,
-				Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+		Intent intent = new Intent(context, MVMainActivity.class);
 		intent.putExtra(MVMainActivity.WIN_TYPE, WinType.Permission.toString());
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(intent);

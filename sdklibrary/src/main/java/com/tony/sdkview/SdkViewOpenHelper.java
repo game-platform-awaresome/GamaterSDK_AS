@@ -18,7 +18,6 @@ import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.sdk.game.MVMainActivity;
 import com.gamater.util.NetCheckUtil;
 import com.gamater.util.ResourceUtil;
-import com.vsgm.sdk.SDKActivity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -121,7 +120,7 @@ public class SdkViewOpenHelper {
 			@Override
 			public void run() {
 				Activity activity = GamaterSDK.getInstance().getActivity();
-				Intent intent = new Intent(activity, Config.isGmLogo ? SDKActivity.class : MVMainActivity.class);
+				Intent intent = new Intent(activity, MVMainActivity.class);
 				intent.putExtra("URL", MobUserManager.getInstance().getGwUrl());
 				intent.putExtra("requestToken", true);
 				intent.putExtra(MVMainActivity.WIN_TYPE, WinType.Web.toString());

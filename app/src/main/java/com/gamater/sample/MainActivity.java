@@ -157,8 +157,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		float amount = 1.99f;
 		String currency = "USD";
 		String extra = "extra";
-		return new PaymentParam(serverId, serverName, account, roleId, roleName, productId, productDescription, amount, currency,
-				extra);
+		return new PaymentParam(serverId, serverName, account, roleId, roleName, productId, productDescription, amount, currency, extra);
 	}
 
 	private void paymentDefault() {

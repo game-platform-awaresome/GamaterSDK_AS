@@ -7,13 +7,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.gamater.sample.MainActivity">
+        <activity
+            android:name="com.gamater.sample.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- kochava 统计 app_guid -->
+        <meta-data android:name="my_kochava_app_guid"
+            android:value="kogamatersdkdemo-jnq0" />
+        <!-- Google登录  统计 client_id -->
+        <meta-data android:name="gamater_google_client_id"
+            android:value="719096250746-jvl56j4begch4qdl1cqf15u3jare7ijo.apps.googleusercontent.com" />
+
     </application>
 
 </manifest>

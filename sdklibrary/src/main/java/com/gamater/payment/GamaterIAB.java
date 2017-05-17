@@ -21,7 +21,7 @@ import com.gamater.common.http.HttpRequest.HttpEventListener;
 import com.gamater.common.http.MD5;
 import com.gamater.common.http.MVHttpRequest;
 import com.gamater.common.http.WebAPI;
-import com.gamater.define.AcGameIABUtil;
+import com.gamater.define.GamaterIABUtil;
 import com.gamater.define.DeviceInfo;
 import com.gamater.define.GPOrder;
 import com.gamater.define.ParameterKey;
@@ -34,12 +34,12 @@ import com.gamater.util.LogUtil;
 import com.gamater.util.ResourceUtil;
 import com.pay.other.OtherPayInterface;
 
-public class AcGameIAB implements HttpEventListener {
-	static final String TAG = "AcGameIAB";
+public class GamaterIAB implements HttpEventListener {
+	static final String TAG = "GamaterIAB";
 
 	private Context context;
 
-	private static AcGameIAB m_instance = null;
+	private static GamaterIAB m_instance = null;
 
 	private Activity currentActivity;
 
@@ -71,26 +71,26 @@ public class AcGameIAB implements HttpEventListener {
 		this.context = context;
 	}
 
-	public synchronized static AcGameIAB getInstance(Activity activity,
-			List<String> skus, boolean isShowLog) {
+	public synchronized static GamaterIAB getInstance(Activity activity,
+													  List<String> skus, boolean isShowLog) {
 
 		if (m_instance == null) {
-			m_instance = new AcGameIAB(activity, skus, isShowLog);
+			m_instance = new GamaterIAB(activity, skus, isShowLog);
 		}
 
 		return m_instance;
 	}
 
-	public synchronized static AcGameIAB getInstance(Activity activity,
-			boolean isShowLog) {
+	public synchronized static GamaterIAB getInstance(Activity activity,
+													  boolean isShowLog) {
 		return getInstance(activity, null, isShowLog);
 	}
 
-	public synchronized static AcGameIAB getInstance() {
+	public synchronized static GamaterIAB getInstance() {
 		return m_instance;
 	}
 
-	private AcGameIAB(Activity activity, List<String> skus, boolean isShowLog) {
+	private GamaterIAB(Activity activity, List<String> skus, boolean isShowLog) {
 		this.context = activity.getApplicationContext();
 		this.currentActivity = activity;
 		setEnableHttpLog(isShowLog);
@@ -152,8 +152,7 @@ public class AcGameIAB implements HttpEventListener {
 	}
 
 	public void payment(final PaymentParam param) {
-		LogUtil.printLog(("payment type : " + Config.payType) + "  PaymentParam: "
-				+ (param == null ? "param is null" : (param.getSku() == null ? "productId is null" : param.getSku())));
+		LogUtil.printLog(("payment type : " + Config.payType) + "  PaymentParam: " + (param == null ? "param is null" : (param.getSku() == null ? "productId is null" : param.getSku())));
 		this.currentActivity.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
@@ -212,11 +211,9 @@ public class AcGameIAB implements HttpEventListener {
 	 * @param roleLevel
 	 *            角色等级
 	 */
-	public void roleReport(String account, String profession, String serverId,
-			String serverName, String roleId, String rolesName, int roleLevel) {
+	public void roleReport(String account, String profession, String serverId, String serverName, String roleId, String rolesName, int roleLevel) {
 		String host = Config.getLoginHost();
-		MVHttpRequest request = new MVHttpRequest("post", host,
-				WebAPI.ROLE_REPORT);
+		MVHttpRequest request = new MVHttpRequest("post", host, WebAPI.ROLE_REPORT);
 		request.initHeader(DeviceInfo.getInstance(null));
 		request.addPostValue(ParameterKey.POST_KEY_PROFESSION, profession);
 		request.addPostValue(ParameterKey.POST_KEY_SERVER_ID, serverId);
@@ -227,8 +224,7 @@ public class AcGameIAB implements HttpEventListener {
 		request.addPostValue(ParameterKey.POST_KEY_ACCOUNT_ID, account);
 		String time = System.currentTimeMillis() / 1000 + "";
 		request.addPostValue(ParameterKey.TIME, time);
-		request.addPostValue(ParameterKey.FLAG, MD5.crypt(roleId + serverId
-				+ account + WebAPI.LOGIN_KEY + time));
+		request.addPostValue(ParameterKey.FLAG, MD5.crypt(roleId + serverId + account + WebAPI.LOGIN_KEY + time));
 		request.setHttpEventListener(this);
 		request.asyncStart();
 	}
@@ -245,7 +241,7 @@ public class AcGameIAB implements HttpEventListener {
 		MVHttpRequest request = new MVHttpRequest("post", host, WebAPI.PAY_VALIDATE);
 		DeviceInfo di = DeviceInfo.getInstance(context);
 		request.initHeader(di);
-		AcGameIABUtil.initPaymentValidate(request, order);
+		GamaterIABUtil.initPaymentValidate(request, order);
 		request.setHttpEventListener(this);
 		request.asyncStart();
 	}
@@ -262,8 +258,7 @@ public class AcGameIAB implements HttpEventListener {
 				JSONObject jsonOrder = (JSONObject) orders.get(i);
 				GPOrder order = new GPOrder(jsonOrder);
 				LogUtil.print("checkFailedOrder", "checkFailedOrder: " + jsonOrder.toString());
-				LogUtil.print("checkFailedOrder",
-						"PayToken: " + order.getPayToken() + "//GoogleOrderId: " + order.getGoogleOrderId());
+				LogUtil.print("checkFailedOrder", "PayToken: " + order.getPayToken() + "//GoogleOrderId: " + order.getGoogleOrderId());
 //				if (!order.getPayToken().isEmpty() && !order.getGoogleOrderId().isEmpty()) {
 //					paymentValidate(order);
 //				}
@@ -291,18 +286,9 @@ public class AcGameIAB implements HttpEventListener {
 						GPOrder order = httpRequest.getOrder();
 						SPUtil.removeOrder(order.toJSON(), context);
 					} 
-//					else {
-//						((Activity) context).runOnUiThread(new Runnable() {
-//							public void run() {
-//								DialogUtil.showDialog(((Activity) context), "支付异常", "发货失败, 请关闭游戏重新进入游戏， 如果还没收到物品， 请联系客服");
-//							}
-//
-//						});
-////						Toast.makeText(context, "发货失败, 请关闭游戏重新进入游戏， 如果还没收到物品， 请联系客服", Toast.LENGTH_LONG).show();
-//					}
 
 				} catch (JSONException e) {
-
+					e.printStackTrace();
 				}
 			}
 		} else if (WebAPI.ROLE_REPORT.equalsIgnoreCase(function)) {

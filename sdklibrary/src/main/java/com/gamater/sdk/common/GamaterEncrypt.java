@@ -1,11 +1,11 @@
-package com.vsgm.sdk;
+package com.gamater.sdk.common;
 
 import android.content.Context;
 
 /**
  * Created by hasoji on 15/11/17.
  */
-public class VsgmEncrypt {
+public class GamaterEncrypt {
 	public native static String encrypt(Context context, String[] params);
 
 	static {

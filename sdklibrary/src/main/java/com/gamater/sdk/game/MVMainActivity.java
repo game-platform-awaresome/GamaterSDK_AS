@@ -36,7 +36,7 @@ import com.gamater.account.MobUserManager;
 import com.gamater.common.Config;
 import com.gamater.common.GoogleGameLoginHelper;
 import com.gamater.common.ThirdLoginHelper;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.sdk.common.ConfigUtil;
 import com.gamater.sdk.common.WinType;
 import com.gamater.sdk.facebook.FacebookHelper;
@@ -44,7 +44,7 @@ import com.gamater.sdk.fragments.MVBaseFragment;
 import com.gamater.sdk.fragments.MVWebFragment;
 import com.gamater.util.LogUtil;
 import com.gamater.util.ResourceUtil;
-import com.vsgm.permission.PermissionManager;
+import com.gamater.sdk.permission.PermissionManager;
 
 @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MVMainActivity extends FragmentActivity {
@@ -69,7 +69,7 @@ public class MVMainActivity extends FragmentActivity {
 		}
 		isCanGoBack = ConfigUtil.getConfigEnable(ConfigUtil.LOGIN_CLOSE);
 		try {
-			AcGameIAB.getInstance().checkIabSetup();
+			GamaterIAB.getInstance().checkIabSetup();
 			if (!FacebookSdk.isInitialized()) {
 				JSONObject config = MobUserManager.getInstance().getConfigJson(this);
 				ConfigUtil.initConfigWithConfigJson(config);

@@ -32,10 +32,6 @@
             android:name="com.facebook.FacebookActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <activity android:name="com.vsgm.sdk.SDKActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
-
         <activity
             android:name="com.gamater.sdk.game.MVMainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

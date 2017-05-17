@@ -45,7 +45,7 @@ import com.gamater.common.http.HttpRequest;
 import com.gamater.common.http.HttpRequest.HttpEventListener;
 import com.gamater.define.SPUtil;
 import com.gamater.dialog.SdkDialogViewManager;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.sdk.common.ConfigUtil;
 import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.util.Encryption;
@@ -228,8 +228,8 @@ public class BaseLinearLayout extends LinearLayout implements BaseSdkView, HttpE
 							String facebookid = configJson.optString(MobUserManager.CONFIG_KEY_FB);
 							if (facebookid != null && facebookid.length() > 0) {
 								FacebookSdk.setApplicationId(facebookid);
-								FacebookSdk.sdkInitialize(AcGameIAB.getInstance().getContext());
-								AppEventsLogger.deactivateApp(AcGameIAB.getInstance().getContext(), facebookid);
+								FacebookSdk.sdkInitialize(GamaterIAB.getInstance().getContext());
+								AppEventsLogger.deactivateApp(GamaterIAB.getInstance().getContext(), facebookid);
 							}
 							facebookLogin();
 						} catch (JSONException e) {

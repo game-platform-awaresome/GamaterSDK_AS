@@ -8,7 +8,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 
 import com.gamater.define.PaymentParam;
-import com.gamater.payment.AcGameIAB;
+import com.gamater.payment.GamaterIAB;
 import com.gamater.payment.web.view.PayView;
 import com.gamater.payment.web.view.PayView.ViewCloseListener;
 import com.gamater.util.ResourceUtil;
@@ -50,8 +50,8 @@ public class WebPayDialog extends Dialog {
 			@Override
 			public void onClose() {
 				dismiss();
-				if (AcGameIAB.getInstance().getAcGameIABListener() != null)
-					AcGameIAB.getInstance().getAcGameIABListener()
+				if (GamaterIAB.getInstance().getAcGameIABListener() != null)
+					GamaterIAB.getInstance().getAcGameIABListener()
 							.otherPaymentFinish();
 			}
 		});
