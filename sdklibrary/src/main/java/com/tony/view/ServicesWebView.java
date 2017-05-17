@@ -159,14 +159,10 @@ public class ServicesWebView extends WebView {
 		String closeStr = getResources().getString(ResourceUtil.getStringId("vsgm_tony_pnf_close_btn_text"));
 		String refreshStr = getResources().getString(ResourceUtil.getStringId("vsgm_tony_pnf_refresh_btn_text"));
 		loadUrl("file:///android_asset/page_not_found.html?system=android&title_text="
-				+ titleStr
-				+ errorCode
-				+ "&msg_btn_text="
-				+ msgStr
-				+ "&hint_text="
-				+ hintStr
-				+ "&close_btn_text="
-				+ closeStr
+				+ titleStr + errorCode
+				+ "&msg_btn_text=" + msgStr
+				+ "&hint_text=" + hintStr
+				+ "&close_btn_text=" + closeStr
 				+ "&refresh_btn_text=" + refreshStr);
 	}
 
