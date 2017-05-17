@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 测试资料 -->
+
+    <string name="vsgm_tony_test_account"></string>
+    <string name="vsgm_tony_test_passwd"></string>
+    <string name="vsgm_tony_img">img</string>
+
+    <!-- 公共的 -->
+    <string name="vsgm_tony_btn_done">確認</string>
+    <string name="vsgm_tony_btn_cancel">取消</string>
+    <string name="vsgm_tony_common_sightseer">遊客</string>
+    <!-- 注册页 -->
+    <string name="vsgm_tony_common_passwd_length_err">密碼最少6位</string>
+    <string name="vsgm_tony_btn_quick_game">快速遊戲</string>
+    <string name="vsgm_tony_btn_login">登入</string>
+    <string name="vsgm_tony_btn_binding">綁定</string>
+    <string name="vsgm_tony_btn_upgrade">綁定郵箱</string>
+    <string name="vsgm_tony_btn_register">註冊</string>
+    <string name="vsgm_tony_title_select_account">請選擇登錄帳號</string>
+    <string name="vsgm_tony_txt_other_account_login">使用其他帳號登錄</string>
+    <string name="vsgm_tony_btn_lj_register">立即註冊</string>
+    <string name="vsgm_tony_btn_forget">找回</string>
+    <string name="vsgm_tony_btn_forget_pw">忘記密碼</string>
+    <string name="vsgm_tony_btn_account_login">帳號登入</string>
+    <string name="vsgm_tony_reg_accept_agreement">同意<u>用戶協議</u></string>
+    <string name="vsgm_tony_reg_hin_in_account">請輸入郵箱</string>
+    <string name="vsgm_tony_reg_hin_in_password">請確認密碼</string>
+    <string name="vsgm_tony_reg_hin_in_conf_password">請確認密碼</string>
+    <string name="vsgm_tony_reg_success">註冊成功</string>
+
+    <!-- 找回密码 -->
+    <string name="vsgm_tony_forget_success_alert">請收取郵件完成密碼重置</string>
+    <string name="vsgm_tony_forget_fail_alert">操作失敗，請稍後再試</string>
+    <!-- 修改密码 -->
+    <string name="vsgm_tony_change_hin_in_oldpasswd">請輸入舊密碼</string>
+    <string name="vsgm_tony_change_hin_in_passwd">請輸入新密碼</string>
+    <string name="vsgm_tony_change_btn_chnage">確認修改</string>
+    <string name="vsgm_tony_change_dlg_disagree">輸入的密碼不一致</string>
+    <string name="vsgm_tony_change_dlg_success">密碼修改成功</string>
+
+    <!-- 账号 -->
+    <string name="vsgm_tony_account_switch">切換帳號</string>
+    <string name="vsgm_tony_account_changepassword">修改密碼</string>
+
+    <!-- 浮动菜单 -->
+    <string name="vsgm_tony_float_account">帳號</string>
+    <string name="vsgm_tony_float_homepage">官網</string>
+    <string name="vsgm_tony_float_gift">禮包</string>
+    <string name="vsgm_tony_float_service">客服</string>
+    <string name="vsgm_tony_float_hidden">隱藏</string>
+    <string name="vsgm_tony_float_fb">FB</string>
+    <string name="vsgm_tony_float_dialog_upgrade_account">請升級為平臺帳號！</string>
+
+    <!-- 调用接口异常 -->
+    <string name="vsgm_tony_err_100">加密錯誤</string>
+    <string name="vsgm_tony_err_101">參數缺少</string>
+    <string name="vsgm_tony_err_102">密碼錯誤</string>
+    <string name="vsgm_tony_err_103">沒有此帳號</string>
+    <string name="vsgm_tony_err_104">伺服器錯誤</string>
+    <string name="vsgm_tony_err_105">帳號不能重複</string>
+    <string name="vsgm_tony_err_106">驗證失敗，請重新輸入密碼</string>
+    <string name="vsgm_tony_err_107">登入失敗</string>
+    <string name="vsgm_tony_err_108">帳號已被使用</string>
+    <string name="vsgm_tony_err_109">沒有此用戶</string>
+    <string name="vsgm_tony_err_211">郵件發送失敗</string>
+    <string name="vsgm_tony_err_unknown">暫時不能連接到服務器，請稍後重試</string>
+    <string name="okgame_delete_account_msg">是否刪除？</string>
+    <string name="okgame_menu_hide_msg">菜單在下次啟動遊戲前不顯示</string>
+    <string name="okgame_email_format_error">郵箱格式不正確</string>
+    <string name="paytype_select_msg">請選擇支付方式</string>
+    <string name="paytype_gp">Google Play</string>
+    <string name="paytype_other">其他支付方式</string>
+    <string name="okgame_forget_pw_tips">您的操作過於頻繁，請稍後再試</string>
+    <string name="vsgm_tony_float_clean">加速</string>
+    <string name="okgame_clean_speed_up_text">已加速%1s</string>
+    <string name="okgame_clean_best_status_text">已加速到最佳狀態</string>
+    <string name="okgame_clean_red_deep_acc">深度加速</string>
+    <string name="okgame_clean_deep_more_supprise">,會有更多驚喜</string>
+    <string name="okgame_clean_deep_more_fluent">,游戲更流暢</string>
+    <string name="okgame_clean_deep_has_speed_up">您的手機已經滿血復活</string>
+    <string name="vsgm_tony_rc_login">RC登錄</string>
+    <string name="vsgm_tony_rc_login_account">帳號(您的常用Email)</string>
+    <string name="vsgm_tony_rc_account_length_err">賬號長度至少6位</string>
+    <string name="vsgm_tony_back">返回</string>
+    <string name="vsgm_tony_image_picker">選擇圖片</string>
+    <string name="vsgm_tony_pnf_dialog_msg">您的留言已收到，謝謝反饋</string>
+    <string name="vsgm_tony_pnf_title_text">抱歉，暫時無法鏈接客服，點擊「刷新」重試</string>
+    <string name="vsgm_tony_pnf_msg_btn_text">我要留言</string>
+    <string name="vsgm_tony_pnf_hint_text">或者您可以留言給客服</string>
+    <string name="vsgm_tony_pnf_close_btn_text">關閉</string>
+    <string name="vsgm_tony_pnf_refresh_btn_text">刷新</string>
+    <string name="vsgm_tony_rank">排行榜</string>
+    <string name="vsgm_tony_topic">話題</string>
+    <string name="vsgm_tony_my_follow">我的關注</string>
+    <string name="vsgm_tony_rank_self">我的排名：第%1$s名</string>
+    <string name="vsgm_tony_battle_rank">戰力排行</string>
+    <string name="vsgm_tony_battle">戰力</string>
+    <string name="vsgm_tony_wealth_rank">財富排行</string>
+    <string name="vsgm_tony_wealth">財富</string>
+    <string name="vsgm_tony_follow">關注</string>
+    <string name="vsgm_tony_follow_cancel">取消</string>
+    <string name="vsgm_tony_follow_count">%1$s人關注</string>
+    <string name="vsgm_tony_my_follow_topic">我關注的話題</string>
+    <string name="vsgm_tony_all">全部></string>
+    <string name="vsgm_tony_my_follow_rank">我關注的排行</string>
+    <string name="vsgm_tony_other_follow_topic">TA關注的話題</string>
+    <string name="vsgm_tony_other_follow_rank">TA關注的排行</string>
+    <string name="vsgm_tony_my_message">我的消息</string>
+    <string name="vsgm_tony_profession">職業</string>
+    <string name="vsgm_tony_not_in_rank">未上榜</string>
+    <string name="vsgm_tony_rank_index">%1$s位</string>
+    <string name="vsgm_tony_min">%1$d分鐘</string>
+    <string name="vsgm_tony_hour">%1$d小時</string>
+    <string name="vsgm_tony_follow_topic">關注話題</string>
+    <string name="vsgm_tony_my_topic">我的話題</string>
+    <string name="vsgm_tony_reply_topic">我參與的</string>
+    <string name="vsgm_tony_follow_ur_rank">關注了你的排行</string>
+    <string name="vsgm_tony_follow_ur_topic">關注了你的話題</string>
+    <string name="vsgm_tony_reply_ur_topic">回復了你的話題</string>
+    <string name="vsgm_tony_message_personal">私信</string>
+    <string name="vsgm_tony_message_system">系統</string>
+    <string name="vsgm_tony_selected">已選</string>
+    <string name="vsgm_tony_like_gifts">點贊禮包</string>
+    <string name="vsgm_tony_share_gifts">分享禮包</string>
+    <string name="vsgm_tony_invite_gifts">邀請禮包</string>
+    <string name="vsgm_tony_activities_desc">活動說明</string>
+    <string name="vsgm_tony_share_tips">邀請越多，獎勵越多</string>
+    <string name="vsgm_tony_share_now">立即分享</string>
+    <string name="vsgm_tony_share_gift_send">已發送禮包</string>
+    <string name="vsgm_tony_gift_reached">已達成</string>
+    <string name="vsgm_tony_gift_unreached">未達成</string>
+    <string name="vsgm_tony_invite">邀請</string>
+    <string name="vsgm_tony_get_gifts">領取</string>
+
+    <!-- 2016.3.10 -->
+    <string name="vsgm_input_email">請輸入您的EMAIL</string>
+    <string name="vsgm_find_pwd">找回密碼</string>
+    <string name="vsgm_find_pwd_message">*輸入您的%s帳號Email，前往Email進行找回。沒收到郵件？別忘了查看垃圾箱</string>
+    <string name="vsgm_free_play">遊客試玩</string>
+    <string name="vsgm_begin_play">開始遊戲</string>
+    <string name="vsgm_pwd">請輸入密碼</string>
+    <string name="vsgm_account">帳號</string>
+    <string name="vsgm_reg_one">註冊一個</string>
+    <string name="vsgm_no_account">沒有帳號？</string>
+    <string name="vsgm_repeat_pwd">確認新密碼</string>
+    <string name="vsgm_reg_new">立即註冊</string>
+    <string name="vsgm_reg_account">註冊帳號</string>
+    <string name="vsgm_upgrade_account">升級帳號</string>
+    <string name="vsgm_play_with_friends">您還可以用以下方式登錄遊戲和您的朋友一起玩</string>
+    <string name="vsgm_to_email">我們已給您的郵箱%s發送了一封修改密碼郵件，請您在24小時內修改密碼！</string>
+    <string name="vsgm_input_account">帳號(您的常用Email)</string>
+    <string name="vsgm_setting">設置</string>
+    <string name="vsgm_login_by_other_way">其他方式登錄</string>
+    <!-- 2016-4-12 -->
+    <string name="vsgm_shake_hide_msg">搖一搖可顯示/隱藏小圖標</string>
+    <string name="vsgm_user_center">帳號中心</string>
+    <string name="vsgm_current_login_account">已登錄帳號：</string>
+    <string name="vsgm_user_info">基本資料</string>
+    <string name="vsgm_recharge_record">充值記錄</string>
+    <string name="vsgm_error_network">請先鏈接網路再重試</string>
+    <string name="text_or">Or</string>
+    <string name="vsgm_tony_float_payment">儲值</string>
+    <string name="vsgm_clean_msg_before_1">手機有點累了，</string>
+    <string name="vsgm_clean_msg_before_2">點擊加速</string>
+    <string name="vsgm_clean_msg_after_1">已加速%1$d%%，</string>
+    <string name="vsgm_clean_msg_after_2">看看新活動</string>
+    <string name="vsgm_v_coins">平台幣</string>
+    <string name="vsgm_my_v_coins">我的平台幣：</string>
+    <string name="vsgm_pay_with_v_coins">平台幣支付</string>
+    <string name="vsgm_pay_my_account">我的賬號：%1$s</string>
+    <string name="vsgm_pay_server">服務器名：%1$s</string>
+    <string name="vsgm_pay_role">角色名：%1$s</string>
+    <string name="vsgm_pay_get_v_coins">充值獲得</string>
+    <string name="vsgm_pay_v_coins_lack">平台幣數量不足，請充值</string>
+    <string name="vsgm_pay_v_coins_pay_extra">額外贈送%1$s</string>
+    <string name="vsgm_pay_v_coins_pay_success">兌換成功</string>
+    <string name="vsgm_pay_sele">兌換成功</string>
+    <string name="vsgm_pay_type_selected">已選方式：%1$s</string>
+    <string name="vsgm_pay_v_coins_top_up">平台幣充值</string>
+    <string name="vsgm_pay_select_country">選擇國家</string>
+    <string name="vsgm_pay_other_country">其他國家</string>
+    <string name="vsgm_pay_success_result">通過%1$s成功充值%2$s</string>
+    <string name="vsgm_pay_success_recommend">通過%1$s兌換充值更多獲得優惠！</string>
+    <string name="vsgm_pay_select_type_coins_rate">選平台幣支付，享%1$d%%加碼</string>
+    <string name="vsgm_not_alert_again_today">今日不再提示</string>
+    <string name="vsgm_data_load_fail">數據加載失敗</string>
+    <string name="vsgm_retry_please">請重試</string>
+    <string name="vsgm_pay_success">充值成功</string>
+    <string name="vsgm_pay_success_congratulations">恭喜您！</string>
+    <string name="vsgm_pay_success_pay_back">返回遊戲</string>
+    <string name="vsgm_pay_success_pay_again">繼續充值</string>
+    <string name="vsgm_pay_next">下一步</string>
+    <string name="vsgm_pay_coins_extra_rate">限時優惠</string>
+    <string name="vsgm_pay_need_pay">需要支付：</string>
+    <string name="vsgm_pay_other_paytype">其他支付方式</string>
+    <string name="vsgm_show_ad_no_more"><u>不再提示</u></string>
+    <string name="vsgm_show_ad_income">進入遊戲</string>
+    <string name="vsgm_new_account_question"><u>獲取及使用</u></string>
+    <string name="vsgm_new_account_upgrade">免費升級為會員</string>
+    <string name="vsgm_tony_new_account_upgrade"><u>升級為%s會員</u></string>
+    <string name="vsgm_show_ad_notice">公告</string>
+    <string name="vsgm_new_account_message">消息</string>
+    <string name="vsgm_new_account">賬號</string>
+    <string name="vsgm_new_account_gift_coin">送平台幣</string>
+    <string name="vsgm_new_account_upgrade_account">升級帳號</string>
+    <string name="vsgm_new_account_info_account">個人資料</string>
+    <string name="vsgm_new_account_change_pwd">修改密碼</string>
+    <string name="vsgm_new_account_change_account">切換帳號</string>
+    <string name="vsgm_new_account_record">充值記錄</string>
+    <string name="vsgm_new_account_right_now">剛剛</string>
+    <string name="vsgm_new_account_seconds">秒前</string>
+    <string name="vsgm_new_account_minute">分鐘前</string>
+    <string name="vsgm_new_account_hour">小時前</string>
+    <string name="vsgm_new_account_day">天前</string>
+    <string name="vsgm_new_account_month">月前</string>
+    <string name="vsgm_new_account_year">年前</string>
+    <string name="vsgm_tony_reg_hin_password">請輸入密碼</string>
+    <string name="vsgm_repeat_reg_pwd">請確認密碼</string>
+    <string name="vsgm_show_ad_exit">退出遊戲</string>
+    <string name="vsgm_show_ad_continue">繼續遊戲</string>
+    <string name="vsgm_pay_coins_commit">支付確認</string>
+    <string name="vsgm_pay_ok">確認支付</string>
+    <string name="vsgm_pay_coins_commit_msg">確認消費%1$s購買%2$s？</string>
+    <string name="vsgm_tony_already_over">(已過期)</string>
+    <string name="vsgm_tony_new_account_go">是否立即前往？</string>
+
+</resources>

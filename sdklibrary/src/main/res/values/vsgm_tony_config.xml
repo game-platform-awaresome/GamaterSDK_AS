@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="enable_facebook_login">true</bool>
+    <bool name="enable_google_login">true</bool>
+    <bool name="enable_twitter_login">false</bool>
+    <bool name="enable_instagram_login">false</bool>
+    <bool name="enable_rc_login">false</bool>
+    <bool name="enable_menu_account">true</bool>
+    <bool name="enable_menu_homepage">true</bool>
+    <bool name="enable_menu_service">true</bool>
+    <bool name="enable_menu_facebook">true</bool>
+    <bool name="enable_login_close">true</bool>
+
+    <integer-array name="sdk_menu_origin">
+        <item>0</item>
+        <item>30</item>
+    </integer-array>
+	<!-- 
+    <string name="vsgm_google_client_id">866386750132-kdkhnc06ej5l2fuvv10db4lniga3hdul.apps.googleusercontent.com</string>
+     -->
+</resources>

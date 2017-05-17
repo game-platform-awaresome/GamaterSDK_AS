@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 测试资料 -->
+    <string name="vsgm_tony_test_account"></string>
+    <string name="vsgm_tony_test_passwd"></string>
+    <string name="vsgm_tony_img">img</string>
+
+    <!-- 公共的 -->
+
+    <string name="vsgm_tony_btn_done">ยืนยัน</string>
+    <string name="vsgm_tony_btn_cancel">ยกเลิก</string>
+    <string name="vsgm_tony_common_sightseer">ผู้เที่ยวชม</string>
+
+    <!-- 注册页 -->
+
+    <string name="vsgm_tony_common_passwd_length_err">รหัสผ่านอย่างน้อยหก</string>
+    <string name="vsgm_tony_btn_quick_game">เข้าเกมส์ด่วน</string>
+    <string name="vsgm_tony_btn_login">เข้าสู่ระบบ</string>
+    <string name="vsgm_tony_btn_binding">ผูกมัด</string>
+    <string name="vsgm_tony_btn_upgrade">ผูกมัดอีเมล์</string>
+    <string name="vsgm_tony_btn_register">สมัคร</string>
+    <string name="vsgm_tony_title_select_account">กรุณาเลือกใช้บัญชีเข้าสู่ระบบ</string>
+    <string name="vsgm_tony_txt_other_account_login">ใช้บัญชีอื่นเข้าสู่ระบบ</string>
+    <string name="vsgm_tony_btn_lj_register">ลงทะเบียนทันที</string>
+    <string name="vsgm_tony_btn_forget">หาคืน</string>
+    <string name="vsgm_tony_btn_forget_pw">ลืมรหัสผ่าน</string>
+    <string name="vsgm_tony_btn_account_login">ล็อกอิน</string>
+    <string name="vsgm_tony_reg_accept_agreement">ยอมรับ <u>ข้อตกลงผู้ใช้</u></string>
+    <string name="vsgm_tony_reg_hin_in_account">กรุณากรอกอีเมล์</string>
+    <string name="vsgm_tony_reg_hin_in_password">กรุณายืนยันรหัส</string>
+    <string name="vsgm_tony_reg_hin_in_conf_password">กรุณายืนยันรหัสผ่าน</string>
+    <string name="vsgm_tony_reg_success">สมัครสำเร็จ</string>
+
+    <!-- 找回密码 -->
+
+    <string name="vsgm_tony_forget_success_alert">กรุณารับอีเมล์ แล้วรีเซ็ตรหัสผ่าน</string>
+    <string name="vsgm_tony_forget_fail_alert">ปฏิบัติล้มเหลว กรุณาลองอีกครั้งในภายหลัง</string>
+
+    <!-- 修改密码 -->
+
+    <string name="vsgm_tony_change_hin_in_oldpasswd">กรุณากรอกรหัสผ่านเก่า</string>
+    <string name="vsgm_tony_change_hin_in_passwd">กรุณากรอกรหัสผ่านใหม่</string>
+    <string name="vsgm_tony_change_btn_chnage">ยืนยันแก้ไข</string>
+    <string name="vsgm_tony_change_dlg_disagree">รหัสผ่านกรอกไม่ตรงกัน</string>
+    <string name="vsgm_tony_change_dlg_success">แก้ไขรหัสผ่านสำเร็จ</string>
+
+    <!-- 账号 -->
+
+    <string name="vsgm_tony_account_switch">เปลี่ยนบัญชี</string>
+    <string name="vsgm_tony_account_changepassword">แก้ไขรหัสผ่าน</string>
+
+    <!-- 浮动菜单 -->
+
+    <string name="vsgm_tony_float_account">บัญชี</string>
+    <string name="vsgm_tony_float_homepage">เว็บไซด์</string>
+    <string name="vsgm_tony_float_gift">รางวัล</string>
+    <string name="vsgm_tony_float_service">บริการ</string>
+    <string name="vsgm_tony_float_hidden">ซ่อน</string>
+    <string name="vsgm_tony_float_fb">FB</string>
+    <string name="vsgm_tony_float_dialog_upgrade_account">กรุณาอัพเกรดเป็นบัญชีสมาชิก</string>
+
+    <!-- 调用接口异常 -->
+
+    <string name="vsgm_tony_err_100">การเข้ารหัสผิดพลาด</string>
+    <string name="vsgm_tony_err_101">พารามิเตอร์โมฆะ</string>
+    <string name="vsgm_tony_err_102">รหัสผ่านไม่ถูกต้อง</string>
+    <string name="vsgm_tony_err_103">ไม่มีบัญชีนี้</string>
+    <string name="vsgm_tony_err_104">เซิร์ฟเวอร์ผิดพลาด</string>
+    <string name="vsgm_tony_err_105">บัญชี้นี้เข้าซ้ำไม่ได้</string>
+    <string name="vsgm_tony_err_106">ผิดพลาด กรุณากรอกรหัสใหม่่</string>
+    <string name="vsgm_tony_err_107">เข้าสู่ระบบล้มเหลว</string>
+    <string name="vsgm_tony_err_108">บัญชีนี้มีคนใช้ไปแล้ว</string>
+    <string name="vsgm_tony_err_109">ไม่มี้ผู้ใช้บริการนี้</string>
+    <string name="vsgm_tony_err_211">ส่งจดหมายล้มเหลว</string>
+    <string name="vsgm_tony_err_unknown">ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ชั่วคราว กรุณาลองใหม่</string>
+    <string name="okgame_delete_account_msg">ต้องการลบหรือไม่?</string>
+    <string name="okgame_menu_hide_msg">ครั้งหน้าในการเปิดเกมส์ไม่ต้องแสดงอีก</string>
+    <string name="okgame_email_format_error">รูปแบบอีเมลไม่ถูกต้อง</string>
+    <string name="paytype_select_msg">กรุณาเลือกวิธีชำระเงิน</string>
+    <string name="paytype_gp">Google Play</string>
+    <string name="paytype_other">ฝ่ายที่3</string>
+    <string name="okgame_forget_pw_tips">ท่านดำเนินการบ่อยไป กรุณาลองใหม่ภายหลัง</string>
+    <string name="vsgm_tony_float_clean">เพิ่มความเร็ว</string>
+    <string name="okgame_clean_speed_up_text">เพิ่มความเร็วแล้ว%1s</string>
+    <string name="okgame_clean_best_status_text">สถานะเพิ่มความเร็วดีที่สุดแล้ว</string>
+    <string name="okgame_clean_red_deep_acc">เพิ่มความเร็วลึก</string>
+    <string name="okgame_clean_deep_more_supprise">,ยังมีสิ่งตระการตาอีกมาก</string>
+    <string name="okgame_clean_deep_more_fluent">,เกมราบรื่นมากกว่า</string>
+    <string name="okgame_clean_deep_has_speed_up">มือถือของท่านเต็มไปด้วยฟื้นฟูเลือดแล้ว</string>
+    <string name="vsgm_tony_rc_login">RC Login</string>
+    <string name="vsgm_tony_rc_login_account">บัญชี(Emailที่ท่านใช้บ่อย)</string>
+    <string name="vsgm_tony_rc_account_length_err">Account at least 6</string>
+    <string name="vsgm_tony_back">กลับ</string>
+    <string name="vsgm_tony_image_picker">เลือกภาพ</string>
+    <string name="vsgm_tony_pnf_dialog_msg">ข้อความที่ท่านฝากไว้เราได้รับแล้ว ขอขอบคุณที่ท่านให้คำติชม</string>
+    <string name="vsgm_tony_pnf_title_text">ขออภัยยังไม่สามารถเชื่อมต่อฝ่ายบริการได้ชั่วคราว คลิก"รีเฟรช"ลองใหม่</string>
+    <string name="vsgm_tony_pnf_msg_btn_text">ฉันต้องการฝากข้อความ</string>
+    <string name="vsgm_tony_pnf_hint_text">หรือท่านสามารถฝากข้อความให้ฝ่ายบริการ</string>
+    <string name="vsgm_tony_pnf_close_btn_text">ปิด</string>
+    <string name="vsgm_tony_pnf_refresh_btn_text">รีเฟรช</string>
+    <string name="vsgm_tony_rank">อันดับ</string>
+    <string name="vsgm_tony_topic">หัวข้อ</string>
+    <string name="vsgm_tony_my_follow">ฉันติดตาม</string>
+    <string name="vsgm_tony_rank_self">อันดับฉัน:อันดับที่%1$s </string>
+    <string name="vsgm_tony_battle_rank">อันดับCAP</string>
+    <string name="vsgm_tony_battle">CAP</string>
+    <string name="vsgm_tony_wealth_rank">อันดับสมบัติ</string>
+    <string name="vsgm_tony_wealth">สมบัติ</string>
+    <string name="vsgm_tony_follow">ติดตาม</string>
+    <string name="vsgm_tony_follow_cancel">ยกเลิก</string>
+    <string name="vsgm_tony_follow_count">%1$sคนติดตาม</string>
+    <string name="vsgm_tony_my_follow_topic">หัวข้อที่ฉันติดตาม</string>
+    <string name="vsgm_tony_all">ทั้งหมด></string>
+    <string name="vsgm_tony_my_follow_rank">อันดับที่ฉันติดตาม</string>
+    <string name="vsgm_tony_other_follow_topic">หัวข้อที่เขาติดตาม</string>
+    <string name="vsgm_tony_other_follow_rank">อันดับที่เขาติดตาม</string>
+    <string name="vsgm_tony_my_message">ข้อความฉัน</string>
+    <string name="vsgm_tony_profession">อาชีพ</string>
+    <string name="vsgm_tony_not_in_rank">ไม่ติดอันดับ</string>
+    <string name="vsgm_tony_rank_index">อันดับที่%1$s </string>
+    <string name="vsgm_tony_min">%1$dนาที</string>
+    <string name="vsgm_tony_hour">%1$dชม.</string>
+    <string name="vsgm_tony_follow_topic">ติดตามหัวข้อ</string>
+    <string name="vsgm_tony_my_topic"> หัวข้อฉัน</string>
+    <string name="vsgm_tony_reply_topic">ฉันเข้าร่วม</string>
+    <string name="vsgm_tony_follow_ur_rank">ติดตามอันดับคุณ</string>
+    <string name="vsgm_tony_follow_ur_topic">ติดตามหัวข้อคุณ</string>
+    <string name="vsgm_tony_reply_ur_topic">ตอบหัวข้อคุณ</string>
+    <string name="vsgm_tony_message_personal">แชท</string>
+    <string name="vsgm_tony_message_system">ระบบ</string>
+    <string name="vsgm_tony_selected">เลือกแล้ว</string>
+    <string name="vsgm_tony_load_wrong">ดาวน์โหลดล้มเหลว</string>
+    <string name="vsgm_tony_refresh">รีเฟรช</string>
+    <string name="vsgm_tony_load_no_data">ไม่มีข้อมูลชั่วคราว</string>
+    <string name="vsgm_tony_load_more">ดาวน์โหลดมากกว่า</string>
+    <string name="vsgm_tony_finish">สำเร็จ</string>
+    <string name="vsgm_tony_max_pick_count">เลือกมากสุดได้เพียง %1$dใบ</string>
+    <string name="vsgm_tony_pick_friend">เลือกเชิญเพื่อน</string>
+    <string name="vsgm_tony_friend_invite">เกมเด็ดๆมาอีกแล้ว มาเล่นด้วยกันสิ！</string>
+    <string name="vsgm_tony_invited">เชิญสำเร็จ</string>
+    <string name="vsgm_tony_invited_failed">เชิญล้มเหลว</string>
+    <string name="vsgm_tony_like_gifts">รางวัลกำไลด์</string>
+    <string name="vsgm_tony_share_gifts">รางวัลแชร์</string>
+    <string name="vsgm_tony_invite_gifts">รางวัลเชิญ</string>
+    <string name="vsgm_tony_share_tips">เชิญมาก รางวัลมาก</string>
+    <string name="vsgm_tony_activities_desc">รายละเอียด</string>
+    <string name="vsgm_tony_share_now">แชร์ทันที</string>
+    <string name="vsgm_tony_share_gift_send">มอบรางวัลแล้ว</string>
+    <string name="vsgm_tony_gift_reached">บรรลุแล้ว</string>
+    <string name="vsgm_tony_gift_unreached">ยังไม่บรรลุ</string>
+    <string name="vsgm_tony_invite">เชิญ</string>
+    <string name="vsgm_tony_get_gifts">รับ</string>
+
+    <!-- 2016.3.10 -->
+    <string name="vsgm_input_email">กรุณากรอกEmailของท่าน</string>
+    <string name="vsgm_find_pwd">หากลับรหัส</string>
+    <string name="vsgm_find_pwd_message">*กรอกบัญชีEmail%sของท่าน ไปดำเนินการหากลับEmail ไม่ได้รับอีเมล์？อย่าลืมไปตรวจที่อีเมล์ขยะด้วยนะ</string>
+    <string name="vsgm_free_play">นักท่องลองเล่น</string>
+    <string name="vsgm_begin_play">เริ่มเกม</string>
+    <string name="vsgm_pwd">กรุณากรอกรหัส</string>
+    <string name="vsgm_account">บัญชี</string>
+    <string name="vsgm_reg_one">สมัครหน่อย</string>
+    <string name="vsgm_no_account">ไม่มีบัญชี？</string>
+    <string name="vsgm_repeat_pwd">กรุณายืนยันรหัสใหม่</string>
+    <string name="vsgm_reg_new">สมัครทันที</string>
+    <string name="vsgm_reg_account">สมัครบัญชี</string>
+    <string name="vsgm_upgrade_account">อัพเกรดบัญชี</string>
+    <string name="vsgm_play_with_friends">ท่านสามารถล็อกอินเกมด้วยวิธีด้านล่างนี้เพื่อเล่นไปพร้อมกับเพื่อน</string>
+    <string name="vsgm_to_email">ราได้ส่งอีเมลให้ท่านแล้ว%sอีเมล์แก้ไขรหัส ขอให้ท่านแก้รหัสภายใน24ชม.！</string>
+    <string name="vsgm_input_account">บัญชี(Emailที่ท่านใช้บ่อย)</string>
+    <string name="vsgm_setting">ตั้งค่า</string>
+    <string name="vsgm_login_by_other_way">ล็อกอินด้วยวิธีอื่น</string>
+    <!-- 2016-4-12 -->
+    <string name="vsgm_shake_hide_msg">เขย่าแสดง/ซ่อนไอคอน</string>
+    <string name="vsgm_user_center">ศูนย์บัญชี</string>
+    <string name="vsgm_current_login_account">บัญชีล็อกอินแล้ว：</string>
+    <string name="vsgm_user_info">ข้อมูลพื้นฐาน</string>
+    <string name="vsgm_recharge_record">บันทึกเติมเงิน</string>
+    <string name="vsgm_error_network">กรุณาเลือกเชื่อมต่ออินเตอร์เน็ตแล้วลองใหม่</string>
+    <string name="text_or">หรือ</string>
+    <string name="vsgm_tony_float_payment">เติมเงิน</string>
+    <string name="vsgm_clean_msg_before_1">มือถือทำงานหนักไปแล้ว</string>
+    <string name="vsgm_clean_msg_before_2">คลิกเพิ่มความเร็ว</string>
+    <string name="vsgm_clean_msg_after_1">เพิ่มความเร็วแล้ว%1$d%%，</string>
+    <string name="vsgm_clean_msg_after_2">ดูกิจกรรมใหม่</string>
+    <string name="vsgm_pay_my_account">ไอดีของฉัน：%1$s</string>
+    <string name="vsgm_pay_server">ชื่อเซิร์ฟเวอร์：%1$s</string>
+    <string name="vsgm_pay_role">ชื่อตัวละคร：%1$s</string>
+    <string name="vsgm_pay_get_v_coins">เติมเงินได้รับ</string>
+    <string name="vsgm_pay_v_coins_pay_extra">+%1$s</string>
+    <string name="vsgm_pay_v_coins_pay_success">แลกสำเร็จ</string>
+    <string name="vsgm_pay_sele">แลกสำเร็จ</string>
+    <string name="vsgm_pay_type_selected">เลือกแล้ว：%1$s</string>
+    <string name="vsgm_pay_select_country">เลือกประเทศ</string>
+    <string name="vsgm_pay_other_country">ประเทศอื่นๆ</string>
+    <string name="vsgm_pay_success_result">เติมเงินผ่าน%1$sสำเร็จ%2$s</string>
+    <string name="vsgm_pay_success_recommend">เติมเงินผ่าน%1$sสามารถรับโปรเติมเงินอื่นๆอีกมากมาย!</string>
+    <string name="vsgm_not_alert_again_today">วันนี้ไม่ต้องแจ้งอีก</string>
+    <string name="vsgm_data_load_fail">ดาวโหลดข้อมูลล้มเหลว</string>
+    <string name="vsgm_retry_please">กรุณาลองใหม่</string>
+    <string name="vsgm_pay_success">เติมเงินสำเร็จ</string>
+    <string name="vsgm_pay_success_congratulations">ยินดีด้วย!</string>
+    <string name="vsgm_pay_success_pay_back">กลับหน้าหลัก</string>
+    <string name="vsgm_pay_success_pay_again">เติมเงินต่อ</string>
+    <string name="vsgm_pay_next">ขั้นตอนต่อไป</string>
+    <string name="vsgm_pay_coins_extra_rate">โปรจำกัดเวลา</string>
+    <string name="vsgm_pay_need_pay">ต้องชำระเงิน：</string>
+    <string name="vsgm_pay_other_paytype">วิธีชำระเงินอื่นๆ</string>
+    <string name="vsgm_show_ad_no_more"><u>ไม่ต้องแจ้งอีก</u></string>
+    <string name="vsgm_show_ad_income">ล็อคอินเกมส์</string>
+    <string name="vsgm_new_account_question"><u>ได้รับและใช้งาน</u></string>
+    <string name="vsgm_new_account_upgrade">อัพเกรดเป็นสมาชิกฟรี</string>
+    <string name="vsgm_tony_new_account_upgrade"><u>อัพเกรด%sเป็นสมาชิก</u></string>
+    <string name="vsgm_show_ad_notice">ประกาศ</string>
+    <string name="vsgm_new_account_message">ข่าวสาร</string>
+    <string name="vsgm_new_account">ไอดี</string>
+    <string name="vsgm_new_account_upgrade_account">อัพเกรดไอดี</string>
+    <string name="vsgm_new_account_info_account">ข้อมูลส่วนตัว</string>
+    <string name="vsgm_new_account_change_pwd">แก้ไขรหัสผ่าน</string>
+    <string name="vsgm_new_account_change_account">เปลี่ยนไอดี</string>
+    <string name="vsgm_new_account_record">บันทึกเติมเงิน</string>
+    <string name="vsgm_new_account_right_now">เมื่อครู่</string>
+    <string name="vsgm_new_account_seconds">วิ.ก่อน</string>
+    <string name="vsgm_new_account_minute">นาทีก่อน</string>
+    <string name="vsgm_new_account_hour">ชม.ก่อน</string>
+    <string name="vsgm_new_account_day">วันก่อน</string>
+    <string name="vsgm_new_account_month">เดือนก่อน</string>
+    <string name="vsgm_new_account_year">ปีก่อน</string>
+    <string name="vsgm_tony_reg_hin_password">กรุณากรอกรหัสผ่าน</string>
+    <string name="vsgm_repeat_reg_pwd">กรุณายืนยันรหัสผ่าน</string>
+    <string name="vsgm_show_ad_exit">ออกเกม</string>
+    <string name="vsgm_show_ad_continue">เล่นต่อ</string>
+    <string name="vsgm_pay_coins_commit">ยืนยันชำระเงิน</string>
+    <string name="vsgm_pay_ok">ยืนยันชำระเงิน</string>
+    <string name="vsgm_pay_coins_commit_msg">ยืนยันใช้จ่าย%1$sซื้อ%2$s?</string><string name="vsgm_tony_already_over">(หมดอายุแล้ว)</string>
+    <string name="vsgm_tony_new_account_go">ไปทันทีเลยไหม?</string>
+
+</resources>

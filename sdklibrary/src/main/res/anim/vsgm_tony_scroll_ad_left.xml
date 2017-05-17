@@ -1,0 +1,5 @@
+<translate
+    android:duration="8000" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromXDelta="360%p"
+    android:toXDelta="0%p">
+</translate>

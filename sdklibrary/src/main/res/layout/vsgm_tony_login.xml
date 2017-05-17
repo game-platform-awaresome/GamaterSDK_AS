@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/okgame_margin_top_large"
+        android:paddingBottom="@dimen/okgame_margin_top_large"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+		<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/vsgm_tony_edittext_bg" >
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="40dp"
+                android:layout_height="42dp"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/vsgm_tony_user_icon" />
+            <EditText
+                android:id="@+id/edtAccount"
+            	style="@style/AcGameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@+id/user_icon"
+                android:paddingRight="5dp"
+                android:background="@null" 
+            	android:hint="@string/vsgm_tony_reg_hin_in_account"
+            	android:inputType="textEmailAddress"
+            	android:text="@string/vsgm_tony_test_account"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="@dimen/okgame_margin_top_small"
+            android:background="@drawable/vsgm_tony_edittext_bg" >
+            <ImageView
+                android:id="@+id/lock_icon"
+                android:layout_width="40dp"
+                android:layout_height="42dp"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/vsgm_tony_lock_icon" />
+
+            <EditText
+                android:id="@+id/edtPasswd"
+                style="@style/AcGameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_toRightOf="@+id/lock_icon"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/vsgm_tony_reg_hin_in_password"
+                android:inputType="textPassword"
+                android:paddingRight="5dp"
+                android:text="@string/vsgm_tony_test_passwd"
+                android:textColor="#000000" />
+
+        </RelativeLayout>
+        <LinearLayout android:id="@+id/btnLogin"
+	        android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/okgame_margin_top_small"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/vsgm_tony_btn_green_selector">
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/vsgm_tony_user_btn_icon"/>
+        	<TextView
+        	    android:id="@+id/login_text"
+	            android:layout_width="wrap_content"
+	            android:layout_height="48dp"
+	            android:gravity="center"
+	            android:padding="10dp"
+	            android:text="@string/vsgm_tony_btn_login"
+	            android:textColor="#ffffff"
+	            android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/other_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="20dp"
+        android:paddingTop="@dimen/okgame_margin_top_middle"
+        android:paddingBottom="@dimen/okgame_margin_top_middle" 
+        android:gravity="center_horizontal"
+        android:background="@drawable/vsgm_tony_base_bottom_bg"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+			<TextView
+                android:id="@+id/btnForget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#000000"
+				android:textSize="16dp"                
+                android:text="@string/vsgm_tony_btn_forget_pw" />
+
+            <TextView
+                android:id="@+id/btnRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#ffffff"
+            	android:textSize="18dp"
+                android:background="@drawable/vsgm_tony_btn_red_selector"
+                android:text="@string/vsgm_tony_btn_lj_register" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

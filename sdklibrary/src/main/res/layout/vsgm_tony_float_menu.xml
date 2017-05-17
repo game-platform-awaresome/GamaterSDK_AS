@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tony.floatmenu.FloatMenuClipBgView android:id="@+id/menu_main_view" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="210dp"
+	android:layout_height="48dp"
+	android:orientation="horizontal">
+	<com.tony.view.FloatMenuHorizontalScrollView 
+	    android:id="@+id/menu_scroll"
+	    android:layout_width="wrap_content"
+	    android:layout_height="48dp"
+	    android:scrollbars="@null"
+		android:background="@drawable/vsgm_tony_float_menu_bg">
+	    <LinearLayout android:layout_width="wrap_content"
+		    android:layout_height="48dp"
+		    android:layout_weight="1"
+		    android:gravity="center_vertical"
+		    android:orientation="horizontal"
+		    android:paddingBottom="2dp"
+		    android:clipToPadding="false"
+		    android:paddingRight="5dp"
+		    android:paddingTop="2dp" >
+		    <com.tony.floatmenu.FloatMenuTextView
+		        android:id="@+id/tvAccount"
+		        style="@style/AcGameFlotMenuTitle"
+		        android:layout_marginLeft="3dp"
+		        android:maxLines="1"
+		        android:drawableTop="@drawable/vsgm_tony_float_account_icon"
+		        android:text="@string/vsgm_tony_float_account" />
+		    <com.tony.floatmenu.FloatMenuTextView
+		        android:id="@+id/tvHomePage"
+		        style="@style/AcGameFlotMenuTitle"
+		        android:layout_marginLeft="3dp"
+		        android:maxLines="1"
+		        android:drawableTop="@drawable/vsgm_tony_float_website_icon"
+		        android:text="@string/vsgm_tony_float_homepage" />
+		    <com.tony.floatmenu.FloatMenuTextView
+		        android:id="@+id/tvFB"
+		        style="@style/AcGameFlotMenuTitle"
+		        android:layout_marginLeft="3dp"
+		        android:maxLines="1"
+		        android:drawableTop="@drawable/vsgm_tony_float_fb_icon"
+		        android:text="@string/vsgm_tony_float_fb" />
+		    <com.tony.floatmenu.FloatMenuTextView
+		        android:id="@+id/tvService"
+		        style="@style/AcGameFlotMenuTitle"
+		        android:layout_marginLeft="3dp"
+		        android:maxLines="1"
+		        android:drawableTop="@drawable/vsgm_tony_float_custom_service_icon"
+		        android:text="@string/vsgm_tony_float_service" />
+		</LinearLayout>
+	</com.tony.view.FloatMenuHorizontalScrollView>
+</com.tony.floatmenu.FloatMenuClipBgView>

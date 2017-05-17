@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tony.sdkview.RcLoginView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="12dp"
+    android:paddingTop="48dp" >
+
+    <com.tony.view.BaseSdkBgLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="28dp" >
+
+        <com.tony.view.WarningLinearLayout
+            android:id="@+id/account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/vsgm_tony_white_border_bg_transparent"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="#A0808080"
+                android:padding="5dp"
+                android:src="@drawable/vsgm_tony_icon_account" />
+
+            <EditText
+                android:id="@+id/account_edit"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="@string/vsgm_tony_rc_login_account"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="#909090"
+                android:textSize="16dp" />
+        </com.tony.view.WarningLinearLayout>
+
+        <com.tony.view.WarningLinearLayout
+            android:id="@+id/passwd_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/vsgm_tony_white_border_bg_transparent"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="#A0808080"
+                android:padding="5dp"
+                android:src="@drawable/vsgm_tony_icon_passwd" />
+
+            <EditText
+                android:id="@+id/passwd_edit"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="@string/vsgm_tony_reg_hin_in_password"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textPassword"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="#909090"
+                android:textSize="16dp" />
+        </com.tony.view.WarningLinearLayout>
+
+        <com.tony.view.SdkTipsTextView
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/vsgm_tony_selector_orange_round"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/vsgm_tony_rc_login"
+            android:textColor="@android:color/white"
+            android:textSize="16dp" />
+    </com.tony.view.BaseSdkBgLinearLayout>
+
+</com.tony.sdkview.RcLoginView>

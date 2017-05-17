@@ -1,0 +1,261 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+	
+    <LinearLayout
+        android:id="@+id/llQuick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/okgame_margin_top_large"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+			android:id="@+id/spnAccounts"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@drawable/vsgm_tony_edittext_bg" >
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="40dp"
+                android:layout_height="42dp"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@drawable/vsgm_tony_user_icon" />
+            <HorizontalScrollView 
+		        android:layout_width="match_parent"
+		        android:layout_height="42dp"
+	            android:layout_toRightOf="@+id/user_icon"
+	            android:layout_toLeftOf="@+id/down_icon"
+		        android:scrollbars="@null">
+	            <TextView
+	                android:id="@+id/account_text"
+	                android:layout_width="match_parent"
+	                android:layout_height="42dp"
+	                android:textColor="#494949"
+	                android:gravity="center_vertical"
+	                android:singleLine="true"
+	                android:minEms="9"
+	                android:textSize="16dp"
+	                android:paddingRight="5dp"
+	                android:background="@null" />
+            </HorizontalScrollView>
+            <ImageView
+                android:id="@+id/down_icon"
+                android:layout_width="40dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:src="@drawable/vsgm_tony_arrow" />
+        </RelativeLayout>
+
+        <LinearLayout android:id="@+id/btnLogin"
+	        android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/okgame_margin_top_middle"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/vsgm_tony_btn_green_selector">
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/vsgm_tony_user_btn_icon"/>
+        	<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="48dp"
+	            android:gravity="center"
+	            android:padding="10dp"
+	            android:text="@string/vsgm_tony_btn_login"
+	            android:textColor="#ffffff"
+	            android:textSize="18dp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/btnBinding"
+	        android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/okgame_margin_top_middle"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/vsgm_tony_btn_red_selector">
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/vsgm_tony_update_btn_icon"/>
+        	<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="48dp"
+	            android:gravity="center"
+	            android:padding="10dp"
+	            android:text="@string/vsgm_tony_btn_binding"
+	            android:textColor="#ffffff"
+	            android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNormal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/okgame_margin_top_large"
+        android:paddingBottom="@dimen/okgame_margin_top_large"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="visible" >
+        <LinearLayout android:id="@+id/btnAccountLogin"
+	        android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/vsgm_tony_btn_green_selector">
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/vsgm_tony_user_btn_icon"/>
+        	<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="48dp"
+	            android:gravity="center"
+	            android:padding="10dp"
+	            android:text="@string/vsgm_tony_btn_account_login"
+	            android:textColor="#ffffff"
+	            android:textSize="18dp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/btnQuickLogin"
+	        android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/okgame_margin_top_middle"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/vsgm_tony_btn_blue_selector">
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/vsgm_tony_quick_btn_icon"/>
+        	<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="48dp"
+	            android:gravity="center"
+	            android:padding="10dp"
+	            android:text="@string/vsgm_tony_btn_quick_game"
+	            android:textColor="#ffffff"
+	            android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/llQuick_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="@dimen/okgame_margin_top_small"
+	        android:layout_marginBottom="@dimen/okgame_margin_top_small"
+	        android:layout_marginLeft="20dp"
+	        android:text="@string/vsgm_tony_txt_other_account_login"
+	        android:textSize="16dp"
+	        android:textColor="#000000" />
+		<View android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:layout_marginBottom="5dp"
+	        android:background="#c1c1c1"
+	        android:visibility="gone"/>
+	</LinearLayout>
+	<LinearLayout android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:orientation="horizontal"
+        android:background="@drawable/vsgm_tony_base_bottom_bg">
+	    <LinearLayout
+	        android:id="@+id/llLoginOption"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:orientation="horizontal"
+	        android:paddingTop="@dimen/okgame_margin_top_middle"
+	        android:paddingBottom="@dimen/okgame_margin_top_middle" >
+	        <ImageButton
+	            android:id="@+id/btnMLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingLeft="10dp"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_m_selector" >
+	        </ImageButton>
+	
+	        <ImageButton
+	            android:id="@+id/btnFBLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_fb_selector" >
+	        </ImageButton>
+	
+	        <ImageButton
+	            android:id="@+id/btnInstLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_camera_selector"
+	            android:visibility="visible" >
+	        </ImageButton>
+	        
+	        <ImageButton
+	            android:id="@+id/btnTwitterLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_twitter_selector"
+	            android:visibility="visible" >
+	        </ImageButton>
+	        
+	        <ImageButton
+	            android:id="@+id/btnGoogleLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_google_selector" >
+	        </ImageButton>
+	        
+	        <ImageButton
+	            android:id="@+id/btnWXLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_google_selector" >
+	        </ImageButton>
+	        
+	        <ImageButton
+	            android:id="@+id/btnRCLogin"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@null"
+	            android:contentDescription="@string/vsgm_tony_img"
+	            android:paddingRight="10dp"
+	            android:layout_weight="1"
+	            android:src="@drawable/vsgm_tony_btn_rc_selector" >
+	        </ImageButton>
+	    </LinearLayout>
+	</LinearLayout>
+</LinearLayout>

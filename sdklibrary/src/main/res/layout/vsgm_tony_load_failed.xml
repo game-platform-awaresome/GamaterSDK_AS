@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_load_faile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/vsgm_tony_color_rank_radio_white"
+    android:visibility="gone" >
+    <TextView
+        android:id="@+id/tv_loading_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vsgm_tony_load_wrong"
+        android:textColor="@color/vsgm_tony_color_black"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/btn_load_failed_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/vsgm_tony_btn_green_selector"
+        android:minHeight="40dp"
+        android:minWidth="120dp"
+        android:gravity="center"
+        android:text="@string/vsgm_tony_refresh"
+        android:textColor="@drawable/vsgm_tony_color_rank_radio_white"
+        android:textSize="15dp" />
+
+</LinearLayout>

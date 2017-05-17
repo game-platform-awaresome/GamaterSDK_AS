@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/okgame_margin_top_large"
+    android:paddingBottom="@dimen/okgame_margin_top_large"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@drawable/vsgm_tony_edittext_bg" >
+        <ImageView
+            android:id="@+id/lock_icon_0"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/vsgm_tony_lock_icon" />
+        <EditText
+            android:id="@+id/edtOldPasswd"
+        	style="@style/AcGameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/lock_icon_0"
+            android:paddingRight="5dp"
+            android:background="@null" 
+        	android:hint="@string/vsgm_tony_change_hin_in_oldpasswd"
+        	android:inputType="textPassword"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/okgame_margin_top_small"
+        android:background="@drawable/vsgm_tony_edittext_bg" >
+        <ImageView
+            android:id="@+id/lock_icon_1"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/vsgm_tony_lock_icon" />
+        <EditText
+            android:id="@+id/edtPasswd"
+        	style="@style/AcGameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/lock_icon_1"
+            android:paddingRight="5dp"
+            android:background="@null" 
+        	android:hint="@string/vsgm_tony_change_hin_in_passwd"
+        	android:inputType="textPassword"/>
+    </RelativeLayout>
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/okgame_margin_top_small"
+        android:background="@drawable/vsgm_tony_edittext_bg" >
+        <ImageView
+            android:id="@+id/lock_icon_2"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/vsgm_tony_lock_icon" />
+        <EditText
+            android:id="@+id/edtConfPasswd"
+        	style="@style/AcGameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/lock_icon_2"
+            android:paddingRight="5dp"
+            android:background="@null" 
+        	android:hint="@string/vsgm_tony_reg_hin_in_conf_password"
+        	android:inputType="textPassword"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btnChange"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/okgame_margin_top_small"
+        android:background="@drawable/vsgm_tony_btn_green_selector"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/vsgm_tony_change_btn_chnage"
+        android:textSize="18sp"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

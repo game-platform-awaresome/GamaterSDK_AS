@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="okgame_margin_top_middle">15dp</dimen>
+    <dimen name="okgame_margin_top_small">10dp</dimen>
+    <dimen name="okgame_margin_top_large">25dp</dimen>
+</resources>

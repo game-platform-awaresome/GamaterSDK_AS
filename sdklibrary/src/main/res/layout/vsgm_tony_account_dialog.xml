@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vsgm_tony_black_round_corner_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="36dp"
+        android:background="@drawable/vsgm_tony_account_dialog_top_bar_bg" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/vsgm_user_center"
+            android:textColor="@android:color/white"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/btn_account_dialog_close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/vsgm_tony_selector_btn_close" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/login_account_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/vsgm_current_login_account"
+            android:textColor="@android:color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/btn_account_dialog_update_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/vsgm_tony_selector_green_btn"
+            android:paddingBottom="2dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="2dp"
+            android:text="@string/vsgm_upgrade_account"
+            android:textColor="@android:color/white"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="2dp"
+        android:background="#505050" />
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp" >
+
+        <com.tony.view.AccountDialogTextView
+            android:id="@+id/btn_account_dialog_change_psw"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/vsgm_tony_icon_change_psw"
+            android:gravity="center_horizontal|bottom"
+            android:singleLine="true"
+            android:text="@string/vsgm_tony_account_changepassword"
+            android:textColor="@android:color/white"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#505050" />
+
+        <com.tony.view.AccountDialogTextView
+            android:id="@+id/btn_account_dialog_account_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/vsgm_tony_icon_info"
+            android:gravity="center_horizontal|bottom"
+            android:singleLine="true"
+            android:text="@string/vsgm_user_info"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#505050"
+            android:visibility="gone"  />
+
+        <com.tony.view.AccountDialogTextView
+            android:id="@+id/btn_account_dialog_check_payment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/vsgm_tony_icon_check"
+            android:gravity="center_horizontal|bottom"
+            android:singleLine="true"
+            android:text="@string/vsgm_recharge_record"
+            android:textColor="@android:color/white"
+            android:textSize="12dp"
+            android:visibility="gone"  />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:background="#505050"
+            android:visibility="gone"  />
+
+        <com.tony.view.AccountDialogTextView
+            android:id="@+id/btn_account_dialog_change_account"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/vsgm_tony_icon_id"
+            android:gravity="center_horizontal|bottom"
+            android:singleLine="true"
+            android:text="@string/vsgm_tony_account_switch"
+            android:textColor="@android:color/white"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

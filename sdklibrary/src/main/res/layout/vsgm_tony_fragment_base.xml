@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/main_view"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/vsgm_tony_base_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+        	android:background="@drawable/vsgm_tony_base_top_bg" >
+        	<RelativeLayout android:id="@+id/title_with_back"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="48dp" >
+        	    <ImageButton
+	                android:id="@+id/btnBack"
+			       	android:layout_width="30dp"
+			       	android:layout_height="30dp"
+			       	android:layout_centerVertical="true"
+	                android:layout_alignParentLeft="true"
+	                android:layout_marginLeft="12dp"
+	                android:background="@null"
+	                android:contentDescription="@string/vsgm_tony_img"
+	                android:src="@drawable/vsgm_tony_btn_back_selector" />
+	            <ImageView android:id="@+id/vsgm_tony_center_logo"
+	                android:layout_width="wrap_content"
+	                android:layout_height="48dp"
+	                android:layout_centerHorizontal="true"
+			       	android:layout_centerVertical="true"
+	                android:contentDescription="@string/vsgm_tony_img" />
+        	</RelativeLayout>
+        	<ImageView
+        	    android:id="@+id/vsgm_tony_left_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginLeft="-12dp"
+                android:contentDescription="@string/vsgm_tony_img"
+        	    android:visibility="gone" />
+            <ImageButton
+				android:id="@+id/btnClose"
+		       	android:layout_width="30dp"
+		       	android:layout_height="30dp"
+		       	android:layout_centerVertical="true"
+		       	android:layout_alignParentRight="true"
+		       	android:layout_marginRight="12dp"
+		       	android:scaleType="centerInside"
+		       	android:contentDescription="@string/vsgm_tony_img"
+		       	android:background="@null"
+		       	android:src="@drawable/vsgm_tony_btn_close_selector" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

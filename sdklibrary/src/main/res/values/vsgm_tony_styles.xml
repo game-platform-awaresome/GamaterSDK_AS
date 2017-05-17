@@ -1,0 +1,100 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AcGameEdit">
+        <item name="android:textColor">#000000</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+
+    <!-- <item name="android:windowBackground">@drawable/vsgm_tony_color_half_transparent</item> -->
+    <style name="vsgm_tony_dialog_full" parent="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@drawable/gamate_tobin_login_bg</item>
+    </style>
+
+    <style name="AcGameFlotMenuTitle">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/vsgm_tony_selector_float_menu_btn</item>
+    </style>
+
+    <!-- @drawable/vsgm_tony_color_common_transparent -->
+    <style name="vsgm_tony_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/gamater_bg_dialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+    
+    <style name="tx_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置未浮动窗口 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置无边框 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置无标题 -->
+        <item name="android:windowBackground">@drawable/vsgm_tony_color_common_white</item>
+        <!-- 设置完全透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置屏幕变暗 -->
+    </style>
+
+    <style name="vsgm_tony_scroll_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:width">144dp</item>
+        <item name="android:height">44dp</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/vsgm_tony_color_common_transparent</item>
+    </style>
+
+    <style name="vsgm_tony_hide_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    
+    <drawable name="gamate_tobin_login_bg">#FFFFFF</drawable>
+    <drawable name="vsgm_tony_color_common_white">#dddedf</drawable>
+    <drawable name="vsgm_tony_color_half_transparent">#aa000000</drawable>
+    <drawable name="vsgm_tony_color_common_transparent">#00000000</drawable>
+    <drawable name="vsgm_tony_color_radio_group_bg">#33383d</drawable>
+    <drawable name="vsgm_tony_color_radio_text_unchecked">#707172</drawable>
+
+    <color name="vsgm_tony_color_radio_unchecked">#707172</color>
+
+    <drawable name="vsgm_tony_color_radio_text_checked">#feffff</drawable>
+    <drawable name="vsgm_tony_color_rank_radio_white">#feffff</drawable>
+    <drawable name="vsgm_tony_color_rank_radio_gray">#f9fafb</drawable>
+
+    <color name="vsgm_tony_color_rank_my_bg">#fffbe4</color>
+    <color name="vsgm_tony_color_blue">#45b2ea</color>
+    <color name="vsgm_tony_color_orange">#f9501e</color>
+    <color name="vsgm_tony_color_black">#1a1a21</color>
+    <color name="vsgm_tony_color_red">#fb5835</color>
+    <color name="vsgm_tony_color_green">#96c443</color>
+    <color name="vsgm_tony_color_gray">#f0f1f2</color>
+
+    <drawable name="vsgm_tony_color_gray_line">#dddddd</drawable>
+
+    <color name="vsgm_tony_color_radio_text_landscape">#fdb740</color>
+    <!-- hdd平台币 -->
+    <color name="vsgm_tony_color_ad_black">#55000000</color>
+    <color name="vsgm_tony_color_ad_green">#81c81b</color>
+    <color name="vsgm_tony_color_message_read">#6b6c6c</color>
+    <color name="vsgm_tony_color_message_not_read">#ffffff</color>
+    <color name="vsgm_tony_color_white">#ffffff</color>
+    <color name="vsgm_tony_scroll_ad_text">#00ffff</color>
+
+    <item type="id" name="tag_item_click">99</item> 
+</resources>

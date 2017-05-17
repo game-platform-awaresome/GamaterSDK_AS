@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tony.sdkview.BaseLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/title_bg"
+        android:gravity="center_vertical" >
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="6dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/vsgm_tony_back" />
+        <ImageView
+            android:id="@+id/vsgm_tony_center_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+			android:layout_centerInParent="true"
+            android:contentDescription="@string/vsgm_tony_img" />
+        <ImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+        	android:paddingRight="6dp"
+        	android:scaleType="centerCrop"
+            android:src="@drawable/vsgm_tony_icon_menu" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <WebView android:id="@+id/webview" 
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"/>
+        <RelativeLayout android:id="@+id/progress_view" 
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:clickable="true"
+	        android:background="#90202020"
+	        android:visibility="gone">
+	        <com.tony.circularprogress.CircularProgressBar 
+	            android:id="@+id/progress_bar"
+			   	android:layout_width="42dp"
+			   	android:layout_height="42dp"
+			   	android:indeterminate="true"
+			   	android:indeterminateOnly="false"
+	            android:layout_centerInParent="true"/>
+	    </RelativeLayout>
+    </RelativeLayout>
+</com.tony.sdkview.BaseLinearLayout>

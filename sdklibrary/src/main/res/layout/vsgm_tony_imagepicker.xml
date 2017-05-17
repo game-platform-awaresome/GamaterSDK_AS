@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:gravity="center_vertical">
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="56dp"
+        android:clipToPadding="false"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="3dp"
+        android:paddingTop="48dp"
+        android:numColumns="3"/>
+	<RelativeLayout android:id="@+id/top_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="48dp"
+	    android:background="#d8dddddd">
+	    <TextView android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="8dp"
+            android:drawableLeft="@drawable/vsgm_tony_common_title_bar_back_arrow_bg"
+            android:drawablePadding="4dp"
+			android:text="@string/vsgm_tony_back" />
+	    <TextView android:id="@+id/picker_title" 
+	        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+			android:text="@string/vsgm_tony_image_picker" />
+	    <Button android:id="@+id/done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_centerVertical="true"
+            android:text="@string/vsgm_tony_finish"
+            android:background="@drawable/vsgm_tony_btn_green_selector"
+            android:textColor="@android:color/white" />
+	</RelativeLayout>
+    <View android:id="@+id/touchPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_above="@+id/bottomBar"
+        android:dividerHeight="0.33dp"
+        android:divider="#e5e5e5"
+        android:background="#f0ffffff"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#f8ffffff"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:clickable="true">
+
+        <FrameLayout
+            android:id="@+id/folderPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true">
+
+            <Button
+                android:id="@+id/folder"
+                android:layout_width="110dp"
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="13dp"
+                android:background="@drawable/vsgm_tony_btn_blue_selector"/>
+        </FrameLayout>
+    </RelativeLayout>
+</RelativeLayout>

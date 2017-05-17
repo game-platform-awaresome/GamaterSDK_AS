@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/okgame_margin_top_large"
+    android:paddingBottom="@dimen/okgame_margin_top_large"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp" >
+	<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="@dimen/okgame_margin_top_middle"
+        android:layout_marginTop="@dimen/okgame_margin_top_middle"
+        android:background="@drawable/vsgm_tony_edittext_bg" >
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/vsgm_tony_user_icon" />
+        <EditText
+            android:id="@+id/edtAccount"
+        	style="@style/AcGameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/user_icon"
+            android:paddingRight="5dp"
+            android:background="@null" 
+        	android:hint="@string/vsgm_tony_reg_hin_in_account"
+        	android:inputType="textEmailAddress"
+        	android:text="@string/vsgm_tony_test_account"/>
+    </RelativeLayout>
+	<LinearLayout android:id="@+id/btnForget"
+      	android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="@dimen/okgame_margin_top_small"
+        android:layout_marginTop="@dimen/okgame_margin_top_small"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/vsgm_tony_btn_green_selector">
+        <ImageView android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/vsgm_tony_lock_btn_icon"/>
+    	<TextView
+			android:layout_width="wrap_content"
+	        android:layout_height="48dp"
+	        android:gravity="center"
+	        android:padding="10dp"
+	        android:text="@string/vsgm_tony_btn_forget"
+	        android:textColor="#ffffff"
+	        android:textSize="18dp" />
+    </LinearLayout>
+</LinearLayout>

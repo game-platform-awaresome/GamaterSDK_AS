@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/vsgm_tony_color_radio_text_landscape" 
+        android:drawable="@drawable/vsgm_tony_left_blue_bg" android:state_checked="true"/>
+    <item android:color="@drawable/vsgm_tony_color_radio_text_checked" 
+        android:drawable="@drawable/vsgm_tony_color_common_white" android:state_checked="false"/>
+</selector>

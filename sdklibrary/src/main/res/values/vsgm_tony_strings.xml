@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 测试资料 -->
+
+    <string name="vsgm_tony_test_account"></string>
+    <string name="vsgm_tony_test_passwd"></string>
+    <string name="vsgm_tony_img">img</string>
+
+    <!-- 公共的 -->
+    <string name="vsgm_tony_btn_done">Confirm</string>
+    <string name="vsgm_tony_btn_cancel">Cancel</string>
+    <string name="vsgm_tony_common_sightseer">Visitor</string>
+    <!-- 注册页 -->
+    <string name="vsgm_tony_common_passwd_length_err">Password at least 6</string>
+    <string name="vsgm_tony_btn_quick_game">Play game</string>
+    <string name="vsgm_tony_btn_login">Login</string>
+    <string name="vsgm_tony_btn_binding">Bind</string>
+    <string name="vsgm_tony_btn_upgrade">Bind Email</string>
+    <string name="vsgm_tony_btn_register">Register</string>
+    <string name="vsgm_tony_title_select_account">Select your login account</string>
+    <string name="vsgm_tony_txt_other_account_login">Use other account</string>
+    <string name="vsgm_tony_btn_lj_register">Register now</string>
+    <string name="vsgm_tony_btn_forget">Recover your password</string>
+    <string name="vsgm_tony_btn_forget_pw">Forgot password</string>
+    <string name="vsgm_tony_btn_account_login">Login</string>
+    <string name="vsgm_tony_reg_accept_agreement">I accept the user terms</string>
+    <string name="vsgm_tony_reg_hin_in_account">Input your email</string>
+    <string name="vsgm_tony_reg_hin_in_password">Input your password</string>
+    <string name="vsgm_tony_reg_hin_in_conf_password">Confirm password</string>
+    <string name="vsgm_tony_reg_success">Register successfully</string>
+
+    <!-- 找回密码 -->
+    <string name="vsgm_tony_forget_success_alert">Get the email and reset your password</string>
+    <string name="vsgm_tony_forget_fail_alert">Failed, please try again later</string>
+    <!-- 修改密码 -->
+    <string name="vsgm_tony_change_hin_in_oldpasswd">Enter old password</string>
+    <string name="vsgm_tony_change_hin_in_passwd">Enter new password</string>
+    <string name="vsgm_tony_change_btn_chnage">Modify</string>
+    <string name="vsgm_tony_change_dlg_disagree">Wrong password</string>
+    <string name="vsgm_tony_change_dlg_success">Modify password successfully</string>
+
+    <!-- 账号 -->
+    <string name="vsgm_tony_account_switch">Switch account</string>
+    <string name="vsgm_tony_account_changepassword">Reset password</string>
+
+    <!-- 浮动菜单 -->
+    <string name="vsgm_tony_float_account">Account</string>
+    <string name="vsgm_tony_float_homepage">website</string>
+    <string name="vsgm_tony_float_gift">Gifts</string>
+    <string name="vsgm_tony_float_service">CS</string>
+    <string name="vsgm_tony_float_hidden">Hide</string>
+    <string name="vsgm_tony_float_fb">FB</string>
+    <string name="vsgm_tony_float_dialog_upgrade_account">Update to the platform account</string>
+    <string name="vsgm_tony_float_delete">Show/Hide the icon ?</string>
+
+    <!-- 调用接口异常 -->
+    <string name="vsgm_tony_err_100">Encryption error</string>
+    <string name="vsgm_tony_err_101">Lack parameter</string>
+    <string name="vsgm_tony_err_102">Wrong password</string>
+    <string name="vsgm_tony_err_103">Account does not exist</string>
+    <string name="vsgm_tony_err_104">Server error</string>
+    <string name="vsgm_tony_err_105">Account repeat</string>
+    <string name="vsgm_tony_err_106">Validation failed, please enter the password again</string>
+    <string name="vsgm_tony_err_107">Login failed</string>
+    <string name="vsgm_tony_err_108">Email is used</string>
+    <string name="vsgm_tony_err_109">No user</string>
+    <string name="vsgm_tony_err_211">Email sent unsuccessfully</string>
+    <string name="vsgm_tony_err_unknown">Can not access the server now, please try again later</string>
+    <string name="okgame_delete_account_msg">Do you want to delete?</string>
+    <string name="okgame_menu_hide_msg">The menu will not be displayed until next time start the game</string>
+    <string name="okgame_email_format_error">The email is not in the correct format</string>
+    <string name="paytype_select_msg">Please select a payment option</string>
+    <string name="paytype_gp">Google Play</string>
+    <string name="paytype_other">Other</string>
+    <string name="okgame_forget_pw_tips">Your operation is too frequent, please try again later</string>
+    <string name="vsgm_tony_float_clean">Boost</string>
+    <string name="okgame_clean_speed_up_text">Boosted %1s</string>
+    <string name="okgame_clean_best_status_text">Phone has been boosted</string>
+    <string name="okgame_clean_red_deep_acc">Turbo boost</string>
+    <string name="okgame_clean_deep_more_supprise">,There will be more surprises</string>
+    <string name="okgame_clean_deep_more_fluent">,play more smoothly</string>
+    <string name="okgame_clean_deep_has_speed_up">Phone has been boosted to the best state</string>
+    <string name="vsgm_tony_rc_login">RC Login</string>
+    <string name="vsgm_tony_rc_login_account">Input your account</string>
+    <string name="vsgm_tony_rc_account_length_err">Account at least 6</string>
+    <string name="vsgm_tony_back">Back</string>
+    <string name="vsgm_tony_image_picker">Choose Photos</string>
+    <string name="vsgm_tony_pnf_dialog_msg">Your message has been received, thank you for your feedback.</string>
+    <string name="vsgm_tony_pnf_title_text">Sorry, unable to link customer service, click the Refresh button to try again.</string>
+    <string name="vsgm_tony_pnf_msg_btn_text">Leaving a message</string>
+    <string name="vsgm_tony_pnf_hint_text">Or you can leave a message</string>
+    <string name="vsgm_tony_pnf_close_btn_text">Close</string>
+    <string name="vsgm_tony_pnf_refresh_btn_text">Refresh</string>
+    <string name="vsgm_tony_rank">Rank</string>
+    <string name="vsgm_tony_topic">Topic</string>
+    <string name="vsgm_tony_my_follow">My Following</string>
+    <string name="vsgm_tony_rank_self">My Ranking: No.%1$s</string>
+    <string name="vsgm_tony_battle_rank">POW Rank</string>
+    <string name="vsgm_tony_battle">POW</string>
+    <string name="vsgm_tony_wealth_rank">Wealth Rank</string>
+    <string name="vsgm_tony_wealth">Wealth</string>
+    <string name="vsgm_tony_follow">Follow</string>
+    <string name="vsgm_tony_follow_cancel">Cancel</string>
+    <string name="vsgm_tony_follow_count">%1$s Followers</string>
+    <string name="vsgm_tony_my_follow_topic">Following Topic</string>
+    <string name="vsgm_tony_all">All></string>
+    <string name="vsgm_tony_my_follow_rank">Following Rank</string>
+    <string name="vsgm_tony_other_follow_topic">His/Her Following Topic</string>
+    <string name="vsgm_tony_other_follow_rank">His/Her Following Rank</string>
+    <string name="vsgm_tony_my_message">My MSG</string>
+    <string name="vsgm_tony_profession">Profession</string>
+    <string name="vsgm_tony_not_in_rank">Not Listed</string>
+    <string name="vsgm_tony_rank_index">No.%1$s</string>
+    <string name="vsgm_tony_min">%1$dMin</string>
+    <string name="vsgm_tony_hour">%1$dHour</string>
+    <string name="vsgm_tony_follow_topic">Following Topic</string>
+    <string name="vsgm_tony_my_topic">My Topic</string>
+    <string name="vsgm_tony_reply_topic">My Participated</string>
+    <string name="vsgm_tony_follow_ur_rank">Followed Your Rank</string>
+    <string name="vsgm_tony_follow_ur_topic">Followed Your Topic</string>
+    <string name="vsgm_tony_reply_ur_topic">Replied Your Topic</string>
+    <string name="vsgm_tony_message_personal">Chat</string>
+    <string name="vsgm_tony_message_system">System</string>
+    <string name="vsgm_tony_selected">Selected</string>
+    <string name="vsgm_tony_load_wrong">Loading Failed</string>
+    <string name="vsgm_tony_refresh">Refresh</string>
+    <string name="vsgm_tony_load_no_data">No Data</string>
+    <string name="vsgm_tony_load_more">Loading More</string>
+    <string name="vsgm_tony_finish">Finish</string>
+    <string name="vsgm_tony_max_pick_count">Choose %1$d At Most</string>
+    <string name="vsgm_tony_pick_friend">Choose To Invite Friend</string>
+    <string name="vsgm_tony_friend_invite">A Super Funny Game Again, Let\'s Play!</string>
+    <string name="vsgm_tony_invited">Invited</string>
+    <string name="vsgm_tony_invited_failed">Failed To Invite</string>
+    <string name="vsgm_tony_like_gifts">Like Gift</string>
+    <string name="vsgm_tony_share_gifts">Share Gift</string>
+    <string name="vsgm_tony_invite_gifts">Invite Gift</string>
+    <string name="vsgm_tony_activities_desc">Activity Info</string>
+    <string name="vsgm_tony_share_tips">More Invite, More rewards</string>
+    <string name="vsgm_tony_share_now">Share</string>
+    <string name="vsgm_tony_share_gift_send">Gift is sent</string>
+    <string name="vsgm_tony_gift_reached">Finished</string>
+    <string name="vsgm_tony_gift_unreached">Unfinished</string>
+    <string name="vsgm_tony_invite">Invite</string>
+    <string name="vsgm_tony_get_gifts">Claim</string>
+
+    <!-- 2016.03.10 -->
+    <string name="vsgm_input_email">Please Enter Registered Email</string>
+    <string name="vsgm_find_pwd">Change Password</string>
+    <string name="vsgm_find_pwd_message">You will receive an email about changing password. Please change it as soon as possible</string>
+    <string name="vsgm_free_play">Free Play</string>
+    <string name="vsgm_begin_play">Start</string>
+    <string name="vsgm_pwd">Password</string>
+    <string name="vsgm_account">Account</string>
+    <string name="vsgm_reg_one">Register</string>
+    <string name="vsgm_no_account">No Account?</string>
+    <string name="vsgm_repeat_pwd">Enter Password Again </string>
+    <string name="vsgm_reg_new">Register New Account</string>
+    <string name="vsgm_reg_account">Register Account</string>
+    <string name="vsgm_upgrade_account">Upgrade Account</string>
+    <string name="vsgm_play_with_friends">You can still login by following ways to play game</string>
+    <string name="vsgm_to_email">We have sent you an email about changing password to your mailbox: $1%s. Please change your password in 24 hours!</string>
+    <string name="vsgm_input_account">Please Enter Account</string>
+    <string name="vsgm_setting">Setting</string>
+    <string name="vsgm_login_by_other_way">Login By Other Ways</string>
+    <!-- 2016-4-12 -->
+    <string name="vsgm_shake_hide_msg">Shake the phone to show/hide the icon</string>
+    <string name="vsgm_user_center">User Center</string>
+    <string name="vsgm_current_login_account">Logged in: </string>
+    <string name="vsgm_user_info">Basic Info</string>
+    <string name="vsgm_recharge_record">Top-up Log</string>
+    <string name="vsgm_error_network">Please Connect To Internet And Try Again</string>
+    <string name="text_or">Or</string>
+    <string name="vsgm_tony_float_payment">Top Up</string>
+    <string name="vsgm_clean_msg_before_1">Your Phone Is Tired</string>
+    <string name="vsgm_clean_msg_before_2">Tap To Speed Up</string>
+    <string name="vsgm_clean_msg_after_1"> %1$d%% Finished</string>
+    <string name="vsgm_clean_msg_after_2">Check Out New Events</string>
+    <string name="vsgm_pay_my_account">My Account: %1$s</string>
+    <string name="vsgm_pay_server">Server: %1$s</string>
+    <string name="vsgm_pay_role">Role: %1$s</string>
+    <string name="vsgm_pay_get_v_coins">Get</string>
+    <string name="vsgm_pay_v_coins_pay_extra">+%1$s</string>
+    <string name="vsgm_pay_v_coins_pay_success">Exchanged</string>
+    <string name="vsgm_pay_sele"> Exchanged </string>
+    <string name="vsgm_pay_type_selected">Selected: %1$s</string>
+    <string name="vsgm_pay_select_country">Select Country</string>
+    <string name="vsgm_pay_other_country">Other Countries</string>
+    <string name="vsgm_pay_success_result">Via %1$s Topped Up %2$s</string>
+    <string name="vsgm_pay_success_recommend">Top Up Via %1$s To Get More Benefits!</string>
+    <string name="vsgm_not_alert_again_today">Block It Today</string>
+    <string name="vsgm_data_load_fail">Loading Data Failed</string>
+    <string name="vsgm_retry_please">Please Try Again</string>
+    <string name="vsgm_pay_success">Top Up Was Successful</string>
+    <string name="vsgm_pay_success_congratulations">Congratulations!</string>
+    <string name="vsgm_pay_success_pay_back">Back To Game</string>
+    <string name="vsgm_pay_success_pay_again">Top Up More</string>
+    <string name="vsgm_pay_next">Next</string>
+    <string name="vsgm_pay_coins_extra_rate">Limited Sale</string>
+    <string name="vsgm_pay_need_pay">Need To Pay:</string>
+    <string name="vsgm_pay_other_paytype">Other Paying Methods</string>
+    <string name="vsgm_show_ad_no_more"><u>Block It</u></string>
+    <string name="vsgm_show_ad_income">Enter Game</string>
+    <string name="vsgm_new_account_question"><u>Acquire And Use</u></string>
+    <string name="vsgm_new_account_upgrade">Become Member For Free</string>
+    <string name="vsgm_show_ad_notice">Notice</string>
+    <string name="vsgm_new_account_message">Message</string>
+    <string name="vsgm_new_account">Account</string>
+    <string name="vsgm_new_account_upgrade_account">Upgrade Account</string>
+    <string name="vsgm_new_account_info_account">Personal Profile</string>
+    <string name="vsgm_new_account_change_pwd">Edit Password</string>
+    <string name="vsgm_new_account_change_account">Switch Account</string>
+    <string name="vsgm_new_account_record">Top Up Record</string>
+    <string name="vsgm_new_account_right_now">Just Now</string>
+    <string name="vsgm_new_account_seconds">Sec Ago</string>
+    <string name="vsgm_new_account_minute">Min Ago</string>
+    <string name="vsgm_new_account_hour">Hr Ago</string>
+    <string name="vsgm_new_account_day">Day Ago</string>
+    <string name="vsgm_new_account_month">Month Ago</string>
+    <string name="vsgm_new_account_year">Year Ago</string>
+    <string name="vsgm_tony_reg_hin_password">Please Input Password</string>
+    <string name="vsgm_repeat_reg_pwd">Please Confirm Password</string>
+    <string name="vsgm_show_ad_exit">Exit Game</string>
+    <string name="vsgm_pay_coins_commit">Confirm Purchase</string>
+    <string name="vsgm_pay_ok">Purchase</string>
+    <string name="vsgm_pay_coins_commit_msg">Confirm To Spend %1$s For %2$s?</string>
+    <string name="vsgm_show_ad_continue">Continue</string>
+    <string name="vsgm_tony_already_over">(Expired)</string>
+    <string name="vsgm_tony_new_account_go">Go now?</string>
+    <!-- <string name="vsgm_tony_new_account_no_more">官网登录查看更多</string> -->
+    <string name="vsgm_tony_google_login">[登录]</string>
+    <string name="vsgm_tony_google_logout">[登出]</string>
+    <string name="vsgm_tony_google_leaderboards">排行榜</string>
+    <string name="vsgm_tony_google_achievement">成就</string>
+
+</resources>
