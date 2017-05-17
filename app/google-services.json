@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "626658418050",
+    "firebase_url": "https://gamatersdkdemo.firebaseio.com",
+    "project_id": "gamatersdkdemo",
+    "storage_bucket": "gamatersdkdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626658418050:android:25d4d22762ef6b06",
+        "android_client_info": {
+          "package_name": "com.gamater.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626658418050-ubofoo82nav8v9kkn6clv135gg5qh6qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI788K9t84r3UItmGvxPv2tgy4BkP_W5Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
