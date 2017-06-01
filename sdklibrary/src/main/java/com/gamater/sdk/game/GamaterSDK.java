@@ -61,7 +61,7 @@ import com.tony.facebook.SdkFacebookDialog;
 import com.tony.floatmenu.SDKMenuManager;
 
 public class GamaterSDK {
-	public final static String LOG_TAG = "1.2.2";
+	public final static String LOG_TAG = "1.2.3";
 	private static GamaterSDK m_instance = null;
 	private Activity activity;
 	private Context context;
@@ -88,7 +88,6 @@ public class GamaterSDK {
 //				SDKMenuManager.getInstance(activity).popupMenu();
 			} catch (Exception e) {
 				Toast.makeText(activity, CrashHandler.obtainExceptionInfo(e), Toast.LENGTH_SHORT).show();
-
 				e.printStackTrace();
 			}
 		} else {
@@ -141,7 +140,7 @@ public class GamaterSDK {
 //		try {
 //
 //			HashMap<String, Object> datamap = new HashMap<String, Object>();
-//			datamap.put(Feature.INPUTITEMS.KOCHAVA_APP_ID, AppUtil.GetMetaDataString(activity, "my_kochava_app_guid"));
+//			datamap.put(Feature.INPUTITEMS.KOCHAVA_APP_ID, AppUtil.GetMetaDataString(activity, "gamater_kochava_app_guid"));
 //			datamap.put(Feature.INPUTITEMS.REQUEST_ATTRIBUTION, true);
 //			Feature kTracker = new Feature(activity, datamap);
 //

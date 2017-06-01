@@ -21,7 +21,6 @@ import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.LikeView;
 import com.facebook.share.widget.ShareDialog;
 import com.facebook.share.widget.ShareDialog.Mode;
-import com.gamater.common.Config;
 import com.gamater.sdk.common.WinType;
 import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.sdk.game.MVMainActivity;
@@ -114,14 +113,13 @@ public class FacebookHelper {
 	}
 
 	public void getFacebookFriends(final FbFriendsCallback callback) {
-		GraphRequest
-				.newMyFriendsRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONArrayCallback() {
-					@Override
-					public void onCompleted(JSONArray objects, GraphResponse response) {
-						if (callback != null)
-							callback.onGetFriends(objects);
-					}
-				}).executeAsync();
+		GraphRequest.newMyFriendsRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONArrayCallback() {
+			@Override
+			public void onCompleted(JSONArray objects, GraphResponse response) {
+				if (callback != null)
+					callback.onGetFriends(objects);
+			}
+		}).executeAsync();
 	}
 
 	public void share2Fb(Activity activity, String shareDataStr) {
@@ -129,6 +127,7 @@ public class FacebookHelper {
 			JSONObject o = new JSONObject(shareDataStr);
 			share2Fb(activity, o);
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -139,8 +138,7 @@ public class FacebookHelper {
 		String caption = shareData.optString("caption");
 		String description = shareData.optString("description");
 		String pictureURL = shareData.optString("picture");
-		LogUtil.printLog("share2Fb linkUrl:" + linkUrl + " /caption:" + caption + " /description:" + description
-				+ " /pictureURL:" + pictureURL);
+		LogUtil.printLog("share2Fb linkUrl:" + linkUrl + " /caption:" + caption + " /description:" + description + " /pictureURL:" + pictureURL);
 		try {
 			ShareLinkContent content = new ShareLinkContent.Builder().setContentUrl(Uri.parse(linkUrl))
 					.setContentDescription(description).setContentTitle(caption)
@@ -172,8 +170,7 @@ public class FacebookHelper {
 		}
 	}
 
-	public void share2Fb(Context ctx, String linkUrl, String caption, String description, String pictureURL,
-			final FbShareCallback callback) {
+	public void share2Fb(Context ctx, String linkUrl, String caption, String description, String pictureURL, final FbShareCallback callback) {
 		mShareCallback = callback;
 		JSONObject o = new JSONObject();
 		try {

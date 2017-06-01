@@ -42,16 +42,17 @@ public class ThirdLoginHelper {
 		FacebookHelper.getInstance().fbLogin(callback);
 	}
 
-	public GoogleLoginCallback getGoogleLoginCallback() {
+	private GoogleLoginCallback getGoogleLoginCallback() {
 		return googleLoginCallback;
 	}
 
 	/**
 	 * google game登录
-	 * 
+	 *
+	 * @param ctx
+	 *
 	 * @param callback
 	 */
-	@SuppressWarnings("deprecation")
 	public void gpLogin(Context ctx, GoogleLoginCallback callback) {
 		int available = GooglePlayServicesUtil.isGooglePlayServicesAvailable(ctx);
 		if (available != ConnectionResult.SUCCESS) {
@@ -78,10 +79,15 @@ public class ThirdLoginHelper {
 		}
 		googleLoginCallback = callback;
 
-//		String googleClientId = ctx.getResources().getString(ResourceUtil.getStringId("vsgm_google_client_id"));
+//		String googleClientId = ctx.getResources().getString(ResourceUtil.getStringId("gamater_google_client_id"));
 		String googleClientId = AppUtil.GetMetaDataString(GamaterSDK.getInstance().getContext(), "gamater_google_client_id");
 //		Log.e("Tobin","googleClientId: " + googleClientId);
+		if(googleClientId == null){
+			Log.e("Gamater","gamater_google_client_id is null");
+			return;
+		}
 		GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(googleClientId).requestEmail().build();
+//		mGoogleApiClient = new GoogleApiClient.Builder(ctx).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 		mGoogleApiClient = new GoogleApiClient.Builder(ctx).addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 		Intent intent = new Intent(ctx, MVMainActivity.class);
 		intent.putExtra(MVMainActivity.WIN_TYPE, WinType.GoogleLogin.toString());

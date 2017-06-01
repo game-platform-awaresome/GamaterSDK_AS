@@ -19,10 +19,12 @@
         </activity>
 
         <!-- kochava 统计 app_guid -->
-        <meta-data android:name="my_kochava_app_guid"
+        <meta-data
+            android:name="gamater_kochava_app_guid"
             android:value="kogamatersdkdemo-jnq0" />
         <!-- Google登录  统计 client_id -->
-        <meta-data android:name="gamater_google_client_id"
+        <meta-data
+            android:name="gamater_google_client_id"
             android:value="719096250746-jvl56j4begch4qdl1cqf15u3jare7ijo.apps.googleusercontent.com" />
 
     </application>

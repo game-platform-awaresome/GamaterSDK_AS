@@ -182,8 +182,7 @@ public class MVMainActivity extends FragmentActivity {
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
-		PermissionManager.getInstance(this).checkRequestPermissionRationale(
-				this);
+		PermissionManager.getInstance(this).checkRequestPermissionRationale(this);
 	}
 
 	@SuppressLint("Override")

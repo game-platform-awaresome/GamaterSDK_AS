@@ -8,7 +8,7 @@
 
     <!-- <item name="android:windowBackground">@drawable/vsgm_tony_color_half_transparent</item> -->
     <style name="vsgm_tony_dialog_full" parent="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
-        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/gamate_tobin_login_bg</item>
     </style>
 

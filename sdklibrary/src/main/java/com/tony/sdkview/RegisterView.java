@@ -169,8 +169,7 @@ public class RegisterView extends BaseLinearLayout {
 	public static RegisterView createView(Context ctx) {
 		if (ctx == null)
 			return null;
-		RegisterView view = (RegisterView) LayoutInflater.from(ctx)
-				.inflate(ResourceUtil.getLayoutId("vsgm_tony_sdk_view_register"), null);
+		RegisterView view = (RegisterView) LayoutInflater.from(ctx).inflate(ResourceUtil.getLayoutId("vsgm_tony_sdk_view_register"), null);
 		view.initView();
 		return view;
 	}

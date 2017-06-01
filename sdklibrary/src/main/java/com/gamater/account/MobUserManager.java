@@ -690,7 +690,7 @@ public class MobUserManager {
 	private void initKochava() {
 		try {
 			HashMap<String, Object> datamap = new HashMap<>();
-			datamap.put(Feature.INPUTITEMS.KOCHAVA_APP_ID, AppUtil.GetMetaDataString(GamaterSDK.getInstance().getActivity(), "my_kochava_app_guid"));
+			datamap.put(Feature.INPUTITEMS.KOCHAVA_APP_ID, AppUtil.GetMetaDataString(GamaterSDK.getInstance().getActivity(), "gamater_kochava_app_guid"));
 			datamap.put(Feature.INPUTITEMS.REQUEST_ATTRIBUTION, true);
 			Feature kTracker = new Feature(GamaterSDK.getInstance().getActivity(), datamap);
 			kTracker.event("customer_user_id", MD5.crypt(deviceInfo.getPackageName() + deviceInfo.getAndroidId() + deviceInfo.getIMEI()));

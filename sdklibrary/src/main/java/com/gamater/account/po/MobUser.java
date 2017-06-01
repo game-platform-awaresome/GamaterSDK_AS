@@ -167,6 +167,8 @@ public class MobUser implements Serializable {
 						this.fbUserId = data.getString("fbUserId");
 					} else if (key.equalsIgnoreCase("fbNickName")) {
 						this.fbNickName = data.getString("fbNickName");
+					} else if (key.equalsIgnoreCase("loginType")) {
+						this.loginType = data.getInt("loginType");
 					}
 				}
 				if (!hasType) {
@@ -174,7 +176,7 @@ public class MobUser implements Serializable {
 				}
 				this.userid = data.getString("userid");
 				this.token = data.getString("token");
-				this.loginType = data.getInt("loginType");
+//				this.loginType = data.getInt("loginType");
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -213,10 +215,11 @@ public class MobUser implements Serializable {
 		this.email = email;
 	}
 
+	@Deprecated
 	public String getPasswd() {
 		return passwd;
 	}
-
+	@Deprecated
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}

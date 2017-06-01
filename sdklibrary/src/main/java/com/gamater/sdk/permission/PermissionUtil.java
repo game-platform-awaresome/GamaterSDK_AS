@@ -17,8 +17,7 @@ public class PermissionUtil {
 	 * @param permissions
 	 * @param requestCode
 	 */
-	static void requestPermissions(Activity activity, String[] permissions,
-			int requestCode) {
+	static void requestPermissions(Activity activity, String[] permissions, int requestCode) {
 		ActivityCompat.requestPermissions(activity, permissions, requestCode);
 	}
 
@@ -29,10 +28,8 @@ public class PermissionUtil {
 	 * @param permission
 	 * @return
 	 */
-	static boolean shouldShowRequestPermissionRationale(Activity activity,
-			String permission) {
-		boolean rationale = ActivityCompat
-				.shouldShowRequestPermissionRationale(activity, permission);
+	static boolean shouldShowRequestPermissionRationale(Activity activity, String permission) {
+		boolean rationale = ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
 		return rationale;
 	}
 }

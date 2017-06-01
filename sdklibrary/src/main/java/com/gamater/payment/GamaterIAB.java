@@ -159,8 +159,7 @@ public class GamaterIAB implements HttpEventListener {
 				if (Config.payType == 1) {
 					paymentGpIab(param);
 				} else if (Config.payType == 2) {
-					AlertDialog.Builder builder = DialogUtil.showDialog(currentActivity, Config.gmTitle,
-							currentActivity.getString(ResourceUtil.getStringId("paytype_select_msg")));
+					AlertDialog.Builder builder = DialogUtil.showDialog(currentActivity, Config.gmTitle, currentActivity.getString(ResourceUtil.getStringId("paytype_select_msg")));
 					builder.setNegativeButton(currentActivity.getString(ResourceUtil.getStringId("paytype_gp")),
 							new OnClickListener() {
 								@Override
@@ -266,6 +265,7 @@ public class GamaterIAB implements HttpEventListener {
 					paymentValidate(order);
 				}
 			} catch (JSONException e) {
+				e.printStackTrace();
 			}
 		}
 
@@ -304,6 +304,7 @@ public class GamaterIAB implements HttpEventListener {
 				}
 			} catch (JSONException e) {
 				defaultPayTypeReturn();
+				e.printStackTrace();
 			}
 		}
 	}

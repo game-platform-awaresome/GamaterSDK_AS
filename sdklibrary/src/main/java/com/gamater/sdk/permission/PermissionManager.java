@@ -34,8 +34,7 @@ public class PermissionManager {
 	public static PermissionManager getInstance(Context context) {
 		if (instance == null) {
 			if (context != null) {
-				instance = new PermissionManager(
-						context.getApplicationContext());
+				instance = new PermissionManager(context.getApplicationContext());
 			}
 		}
 		return instance;
@@ -44,8 +43,7 @@ public class PermissionManager {
     private synchronized void getManifestPermissions() {
         PackageInfo packageInfo = null;
         try {
-            packageInfo = context.getPackageManager().getPackageInfo(
-            		context.getPackageName(), PackageManager.GET_PERMISSIONS);
+            packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -59,8 +57,7 @@ public class PermissionManager {
         }
     }
 
-	public synchronized void request(String[] permissions,
-			PermissionCallback listener) {
+	public synchronized void request(String[] permissions, PermissionCallback listener) {
 		this.callback = listener;
 		this.permissions = permissions;
         checkSelfPermission();
@@ -68,8 +65,7 @@ public class PermissionManager {
 
 	public synchronized void requestAll(PermissionCallback listener) {
 		getManifestPermissions();
-		request(manifestPermissions.toArray(new String[manifestPermissions
-				.size()]), listener);
+		request(manifestPermissions.toArray(new String[manifestPermissions.size()]), listener);
 	}
 
     private synchronized void checkSelfPermission() {
@@ -81,8 +77,7 @@ public class PermissionManager {
         }
         for (String permission : permissions) {
 			if (manifestPermissions.contains(permission)) {
-				int checkSelfPermission = PermissionUtil.checkSelfPermission(
-						context, permission);
+				int checkSelfPermission = PermissionUtil.checkSelfPermission(context, permission);
                 if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
                     mDeniedPermissions.add(permission);
                 }
@@ -107,21 +102,17 @@ public class PermissionManager {
 		this.activity = activity;
         boolean shouldShowRational = false;
         for (String permission : mDeniedPermissions) {
-			shouldShowRational = shouldShowRational
-					|| PermissionUtil.shouldShowRequestPermissionRationale(
-							activity, permission);
+			shouldShowRational = shouldShowRational || PermissionUtil.shouldShowRequestPermissionRationale(activity, permission);
         }
         String[] permissions = mDeniedPermissions.toArray(new String[mDeniedPermissions.size()]);
 		requestPermissions(permissions);
     }
 
     private synchronized void requestPermissions(String[] permissions) {
-		PermissionUtil.requestPermissions(activity, permissions,
-				REQUEST_CODE_PERMISSION);
+		PermissionUtil.requestPermissions(activity, permissions, REQUEST_CODE_PERMISSION);
     }
 
-	public synchronized void onRequestPermissionsResult(int requestCode,
-			String[] permissions, int[] grantResults) {
+	public synchronized void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case REQUEST_CODE_PERMISSION:
 			LinkedList<String> grantedPermissions = new LinkedList<String>();
