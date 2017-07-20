@@ -1,1 +1,9 @@
 include ':app', ':sdklibrary'
+
+////指定需要引入的Project名称
+//include ':PlaySDK'
+////指定该Project的路径，根据实际情况进行修改
+//def path = '../PlaySDK'
+//project(':PlaySDK').projectDir = new File(path)
+////引入Project里的Module
+//include ':PlaySDK:sdk'

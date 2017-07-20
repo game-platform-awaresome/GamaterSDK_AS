@@ -1,5 +1,6 @@
 #include <jni.h>
 #include <string>
+#include <stdlib.h>
 
 jstring getSignature(JNIEnv *env, jobject context) {
     jclass contextClass = env->FindClass("android/content/Context");

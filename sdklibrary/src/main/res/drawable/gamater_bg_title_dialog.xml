@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="rectangle">
+        <!-- 填充颜色  透明度0.8 cc 半透明 80 透明00-->
+        <solid android:color="#80828080" />
+        <corners android:topLeftRadius="10dp" android:topRightRadius="10dp"/>
+    </shape>
+</item>
+</selector><!--正常-->

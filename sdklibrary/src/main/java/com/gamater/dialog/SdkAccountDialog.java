@@ -53,8 +53,7 @@ public class SdkAccountDialog extends Dialog implements View.OnClickListener {
 			}
 			findViewById(ResourceUtil.getId("btn_account_dialog_update_account")).setVisibility(View.GONE);
 		}
-		// accountText.setText(ResourceUtil.getStringId("vsgm_current_login_account")
-		// + sb.toString());
+		// accountText.setText(ResourceUtil.getStringId("vsgm_current_login_account") + sb.toString());
 		accountText.setText(sb.toString());
 
 		findViewById(ResourceUtil.getId("btn_account_dialog_close")).setOnClickListener(this);
@@ -86,8 +85,7 @@ public class SdkAccountDialog extends Dialog implements View.OnClickListener {
 			mActivity.startActivity(intent);
 		} else if (v.getId() == ResourceUtil.getId("btn_account_dialog_check_payment")) {
 			Intent intent = new Intent(mActivity, MVMainActivity.class);
-			// intent.putExtra("URL", mobUserManager.getGwUrl() +
-			// "/account/recharge-record");
+			// intent.putExtra("URL", mobUserManager.getGwUrl() + "/account/recharge-record");
 			String url = mobUserManager.getConfigJson(mActivity).optString("recharge_record");
 			if (TextUtils.isEmpty(url)) {
 				url = gwUrl + "account/recharge-record";

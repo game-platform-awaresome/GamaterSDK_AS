@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Display;
@@ -16,7 +15,6 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.gamater.common.Config;
@@ -35,7 +33,6 @@ public class NoticeDialog extends Dialog {
 	private OKgameDialogProcess mProcess;
 	private View mContent;
 	private WebView mWebView;
-	private ImageButton mCloseBtn;
 	private String mContentString;
 	private boolean isShowClose;
 
@@ -118,6 +115,7 @@ public class NoticeDialog extends Dialog {
 				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo_okgame"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+                e.printStackTrace();
 			}
 		} else if (Config.isGmLogo) {
 			int padding = DensityUtil.dip2px(mActivity, 8);
@@ -125,6 +123,7 @@ public class NoticeDialog extends Dialog {
 				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo_gamemy"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+                e.printStackTrace();
 			}
 		} else {
 			int padding = DensityUtil.dip2px(mActivity, 8);
@@ -132,6 +131,7 @@ public class NoticeDialog extends Dialog {
 				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+                e.printStackTrace();
 			}
 		}
 	}
@@ -154,11 +154,11 @@ public class NoticeDialog extends Dialog {
 	}
 
 	private class CustomWebViewClient extends WebViewClient {
-
+		@SuppressWarnings("deprecation")
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
-			// if (!NoticeDialog.this.isShowing())
-			// return true;
+//			if (!NoticeDialog.this.isShowing())
+//				return true;
 			Intent intent = new Intent();
 			intent.setAction("android.intent.action.VIEW");
 			Uri content_url = Uri.parse(url);
@@ -167,6 +167,7 @@ public class NoticeDialog extends Dialog {
 			return true;
 		}
 
+		@SuppressWarnings("deprecation")
 		@Override
 		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 			super.onReceivedError(view, errorCode, description, failingUrl);

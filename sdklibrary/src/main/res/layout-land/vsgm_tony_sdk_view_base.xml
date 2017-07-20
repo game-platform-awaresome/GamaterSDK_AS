@@ -7,7 +7,7 @@
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@drawable/title_bg"
+        android:background="@drawable/gamater_bg_title_dialog"
         android:gravity="center_vertical" >
         <ImageView
             android:id="@+id/btnLoginViewBack"
@@ -44,7 +44,7 @@
     <ScrollView android:layout_below="@+id/top_bar" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="@null"
+        android:scrollbars="none"
         android:fillViewport="true">
         <com.tony.sdkview.BaseRelativeLayout 
 	        android:id="@+id/container_view"

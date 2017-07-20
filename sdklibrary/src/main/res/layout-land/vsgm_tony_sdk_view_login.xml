@@ -87,7 +87,7 @@
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="12dp"
-                android:singleLine="true"
+                android:maxLines="1"
                 android:textColor="@android:color/black"
                 android:textColorHint="#909090"
                 android:textSize="16dp" />

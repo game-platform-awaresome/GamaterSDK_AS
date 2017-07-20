@@ -42,6 +42,7 @@ dependencies {
 
     compile 'com.google.android.gms:play-services:10.2.0'
 
+
 //    compile 'com.google.android.gms:play-services-auth:9.2.1'
 //    compile 'com.google.android.gms:play-services-plus:9.2.1'
 //    compile 'com.google.android.gms:play-services-games:9.2.1'

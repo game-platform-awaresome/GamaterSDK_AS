@@ -27,10 +27,8 @@ import com.gamater.util.ResourceUtil;
 import com.tony.view.SdkTipsTextView;
 import com.tony.viewinterface.BaseSdkView;
 
-public class BaseRelativeLayout extends RelativeLayout implements BaseSdkView,
-		HttpEventListener {
-	public BaseRelativeLayout(Context context, AttributeSet attrs,
-			int defStyleAttr) {
+public class BaseRelativeLayout extends RelativeLayout implements BaseSdkView, HttpEventListener {
+	public BaseRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 	}
 
@@ -52,8 +50,7 @@ public class BaseRelativeLayout extends RelativeLayout implements BaseSdkView,
 		AnimationSet set = new AnimationSet(true);
 		AlphaAnimation aa = new AlphaAnimation(0.5f, 1);
 		aa.setDuration(100);
-		ScaleAnimation sa = new ScaleAnimation(1.1f, 1f, 1.1f, 1,
-				Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+		ScaleAnimation sa = new ScaleAnimation(1.1f, 1f, 1.1f, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 		sa.setDuration(100);
 		set.addAnimation(aa);
 		set.addAnimation(sa);
@@ -67,9 +64,7 @@ public class BaseRelativeLayout extends RelativeLayout implements BaseSdkView,
 		AnimationSet set = new AnimationSet(true);
 		AlphaAnimation aa = new AlphaAnimation(1, 0.5f);
 		aa.setDuration(100);
-		ScaleAnimation sa = new ScaleAnimation(1, 1.1f, 1, 1.1f,
-				Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
-				0.5f);
+		ScaleAnimation sa = new ScaleAnimation(1, 1.1f, 1, 1.1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 		sa.setDuration(100);
 		set.addAnimation(aa);
 		set.addAnimation(sa);
@@ -182,18 +177,15 @@ public class BaseRelativeLayout extends RelativeLayout implements BaseSdkView,
 				if (funcation == APIs.WEB_API_THIRD_LOGIN) {
 					MobUser user = new MobUser(result);
 					if (user.getStatus() == 1) {
-						MobUserManager mobUserManager = MobUserManager
-								.getInstance();
-						mobUserManager.saveAccount(user.getUserid(),
-								obj.toString());
+						MobUserManager mobUserManager = MobUserManager.getInstance();
+						mobUserManager.saveAccount(user.getUserid(), obj.toString());
 						mobUserManager.setCurrentUser(user);
 						SdkDialogViewManager.dialogDismiss();
 //						OnLineHelper.getInstance(getContext()).start();
 						GamaterSDK.getInstance().resumeGmae(null);
 						GamaterSDK.getInstance().showNoticeDialog();
 						mobUserManager.setIsLoginIng(false);
-						loginSuccessCallback(user, 3, httpRequest.getTag()
-								.toString());
+						loginSuccessCallback(user, 3, httpRequest.getTag().toString());
 					}
 				}
 			}

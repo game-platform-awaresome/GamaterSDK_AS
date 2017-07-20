@@ -130,9 +130,7 @@ public class SdkGameDialog extends Dialog {
 
 	}
 
-
 	private Runnable showAfterCallback;
-
 	public void showWithCallback(Runnable callback) {
 		showAfterCallback = callback;
 		show();
@@ -256,8 +254,7 @@ public class SdkGameDialog extends Dialog {
 				return super.dispatchTouchEvent(ev);
 			View localView = getCurrentFocus();
 			if (shouldHandleEvent(ev)) {
-				InputMethodManager localInputMethodManager = (InputMethodManager) getContext()
-						.getSystemService(Context.INPUT_METHOD_SERVICE);
+				InputMethodManager localInputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 				if ((localView != null) && (localInputMethodManager != null)) {
 					localInputMethodManager.hideSoftInputFromWindow(localView.getWindowToken(), 0);
 				}
@@ -314,8 +311,7 @@ public class SdkGameDialog extends Dialog {
 
 	@Override
 	public void onBackPressed() {
-		if (((BaseSdkView) containerView.getChildAt(containerView.getChildCount() - 1)).interceptOnBackEvent()
-				|| isProgressLoading)
+		if (((BaseSdkView) containerView.getChildAt(containerView.getChildCount() - 1)).interceptOnBackEvent() || isProgressLoading)
 			return;
 		if (SdkDialogViewManager.doViewBackPressed(containerView)) {
 			return;
