@@ -39,8 +39,7 @@ public class SdkServiceViewDialog extends Dialog {
 		servicesWebView.setImagePickerListener(new ImagePickerViewListener() {
 			@Override
 			public void onPick(String... path) {
-				ServicesHelper.getInstance().scaleImageNupload(path[0],
-						servicesWebView.getMaxUploadSize());
+				ServicesHelper.getInstance().scaleImageNupload(path[0], servicesWebView.getMaxUploadSize());
 			}
 
 			@Override
@@ -95,7 +94,7 @@ public class SdkServiceViewDialog extends Dialog {
 		String token = user == null ? "" : (user.getToken() == null ? "xx" : user.getToken());
 		String flag = MD5.crypt(userid + packageName + token + time + systemOs);
 		String host = MobUserManager.getInstance().getServiceHost();
-
+//		String host = "http://test.front.chat.gamater.com";
 		String url = host + "/api/login?user_id=" + userid + "&token=" + token + "&package=" + packageName + "&time=" + time
 				+ "&os=" + systemOs + "&sign=" + flag + "&customer_id=" + DeviceInfo.getInstance(getContext()).getCustomerId()
 				+ "&logo=" + Config.gmTitle.toLowerCase();
@@ -112,6 +111,7 @@ public class SdkServiceViewDialog extends Dialog {
 		}
 		LogUtil.printHTTP(url);
 		servicesWebView.loadUrl(url);
+//		servicesWebView.loadUrl("https://support.getdaike.com/gamatersample");
 	}
 
 	// private void loadUrl(String token) {

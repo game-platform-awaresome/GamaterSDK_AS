@@ -65,10 +65,7 @@ public class SdkSettingView extends BaseLinearLayout {
 	public static SdkSettingView createView(Context ctx) {
 		if (ctx == null)
 			return null;
-		SdkSettingView view = (SdkSettingView) LayoutInflater.from(ctx)
-				.inflate(
-						ResourceUtil.getLayoutId("vsgm_tony_sdk_view_setting"),
-						null);
+		SdkSettingView view = (SdkSettingView) LayoutInflater.from(ctx).inflate(ResourceUtil.getLayoutId("vsgm_tony_sdk_view_setting"), null);
 		view.initView();
 		return view;
 	}

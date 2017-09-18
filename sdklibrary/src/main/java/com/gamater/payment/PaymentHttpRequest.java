@@ -58,6 +58,7 @@ public class PaymentHttpRequest extends MVHttpRequest implements HttpEventListen
 				orderId = obj.optString("orderId");
 			}
 		} catch (JSONException e) {
+			e.printStackTrace();
 		}
 		if (process != null && process.isShowing())
 			process.dismiss();
@@ -82,6 +83,6 @@ public class PaymentHttpRequest extends MVHttpRequest implements HttpEventListen
 	}
 
 	public interface OrderIdCallback {
-		public void onCallback(String orderId);
+		void onCallback(String orderId);
 	}
 }

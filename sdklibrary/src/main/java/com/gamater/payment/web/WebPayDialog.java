@@ -41,8 +41,7 @@ public class WebPayDialog extends Dialog {
 
 	private void setupView() {
 		mPayView = new PayView(mActivity, mOrderId, mParam);
-		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, mActivity
-				.getResources().getDisplayMetrics().heightPixels);
+		LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, mActivity.getResources().getDisplayMetrics().heightPixels);
 		addContentView(mPayView, lp);
 		mPayView.setFocusable(true);
 		mPayView.requestFocus();
@@ -51,16 +50,14 @@ public class WebPayDialog extends Dialog {
 			public void onClose() {
 				dismiss();
 				if (GamaterIAB.getInstance().getAcGameIABListener() != null)
-					GamaterIAB.getInstance().getAcGameIABListener()
-							.otherPaymentFinish();
+					GamaterIAB.getInstance().getAcGameIABListener().otherPaymentFinish();
 			}
 		});
 	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
-				&& event.getAction() == KeyEvent.ACTION_DOWN) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 			mPayView.onBackPressed();
 			return true;
 		}

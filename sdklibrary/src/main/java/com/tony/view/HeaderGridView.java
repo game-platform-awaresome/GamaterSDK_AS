@@ -148,8 +148,7 @@ public class HeaderGridView extends GridView {
 		if (mHeaderViewInfos.size() > 0) {
 			boolean result = false;
 			ListAdapter adapter = getAdapter();
-			if (adapter != null
-					&& ((HeaderViewGridAdapter) adapter).removeHeader(v)) {
+			if (adapter != null && ((HeaderViewGridAdapter) adapter).removeHeader(v)) {
 				result = true;
 			}
 			removeFixedViewInfo(v, mHeaderViewInfos);
@@ -172,8 +171,7 @@ public class HeaderGridView extends GridView {
 	@Override
 	public void setAdapter(ListAdapter adapter) {
 		if (mHeaderViewInfos.size() > 0) {
-			HeaderViewGridAdapter hadapter = new HeaderViewGridAdapter(
-					mHeaderViewInfos, adapter);
+			HeaderViewGridAdapter hadapter = new HeaderViewGridAdapter(mHeaderViewInfos, adapter);
 			int numColumns = getNumColumns();
 			if (numColumns > 1) {
 				hadapter.setNumColumns(numColumns);
@@ -208,8 +206,7 @@ public class HeaderGridView extends GridView {
 	 * This is intended as a base class; you will probably not need to use this
 	 * class directly in your own code.
 	 */
-	private static class HeaderViewGridAdapter implements WrapperListAdapter,
-			Filterable {
+	private static class HeaderViewGridAdapter implements WrapperListAdapter, Filterable {
 		// This is used to notify the container of updates relating to number of
 		// columns
 		// or headers changing, which changes the number of placeholders needed
@@ -221,13 +218,11 @@ public class HeaderGridView extends GridView {
 		boolean mAreAllFixedViewsSelectable;
 		private final boolean mIsFilterable;
 
-		public HeaderViewGridAdapter(ArrayList<FixedViewInfo> headerViewInfos,
-				ListAdapter adapter) {
+		public HeaderViewGridAdapter(ArrayList<FixedViewInfo> headerViewInfos, ListAdapter adapter) {
 			mAdapter = adapter;
 			mIsFilterable = adapter instanceof Filterable;
 			if (headerViewInfos == null) {
-				throw new IllegalArgumentException(
-						"headerViewInfos cannot be null");
+				throw new IllegalArgumentException("headerViewInfos cannot be null");
 			}
 			mHeaderViewInfos = headerViewInfos;
 			mAreAllFixedViewsSelectable = areAllListInfosSelectable(mHeaderViewInfos);
@@ -368,8 +363,7 @@ public class HeaderGridView extends GridView {
 			// ArrayIndexOutOfBoundsException)
 			int numHeadersAndPlaceholders = getHeadersCount() * mNumColumns;
 			if (position < numHeadersAndPlaceholders) {
-				View headerViewContainer = mHeaderViewInfos.get(position
-						/ mNumColumns).viewContainer;
+				View headerViewContainer = mHeaderViewInfos.get(position / mNumColumns).viewContainer;
 				if (position % mNumColumns == 0) {
 					return headerViewContainer;
 				} else {
@@ -400,8 +394,7 @@ public class HeaderGridView extends GridView {
 		@Override
 		public int getItemViewType(int position) {
 			int numHeadersAndPlaceholders = getHeadersCount() * mNumColumns;
-			if (position < numHeadersAndPlaceholders
-					&& (position % mNumColumns != 0)) {
+			if (position < numHeadersAndPlaceholders && (position % mNumColumns != 0)) {
 				// Placeholders get the last view type number
 				return mAdapter != null ? mAdapter.getViewTypeCount() : 1;
 			}

@@ -251,8 +251,7 @@ public class NormalLoginView extends BaseLinearLayout {
 	public static NormalLoginView createView(Context ctx) {
 		if (ctx == null)
 			return null;
-		NormalLoginView view = (NormalLoginView) LayoutInflater.from(ctx)
-				.inflate(findLayoutId("vsgm_tony_sdk_view_login"), null);
+		NormalLoginView view = (NormalLoginView) LayoutInflater.from(ctx).inflate(findLayoutId("vsgm_tony_sdk_view_login"), null);
 		// 初始化界面元素和事件
 		view.initView();
 		return view;

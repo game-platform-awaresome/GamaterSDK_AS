@@ -54,6 +54,7 @@ public class PayView extends FrameLayout {
 			m.setAccessible(true);
 			m.invoke(mActivity, new Object[]{});
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		String url = Config.getWebPayHost();
@@ -92,17 +93,16 @@ public class PayView extends FrameLayout {
 			if (url.startsWith("sms:")) {
 				Uri query_string = Uri.parse(url);
 				String query_scheme = query_string.getScheme();
-
 				try {
 					Intent intent = new Intent(Intent.ACTION_VIEW, query_string);
 					String[] body = url.split("\\?body=");
 					if (query_scheme.equalsIgnoreCase("sms") && body.length > 1) {
-						intent = new Intent(Intent.ACTION_VIEW,
-								Uri.parse(body[0]));
+						intent = new Intent(Intent.ACTION_VIEW, Uri.parse(body[0]));
 						intent.putExtra("sms_body", URLDecoder.decode(body[1]));
 					}
 					mActivity.startActivity(intent);
 				} catch (Exception e) {
+					e.printStackTrace();
 				}
 				return true;
 			} else if (url.startsWith("http:") || url.startsWith("https:")) {
@@ -126,8 +126,7 @@ public class PayView extends FrameLayout {
 		}
 
 		@Override
-		public void onReceivedError(WebView view, int errorCode,
-				String description, String failingUrl) {
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 		}
 	};
 
@@ -148,37 +147,35 @@ public class PayView extends FrameLayout {
 	private void init() {
 		LayoutInflater inflater = LayoutInflater.from(mActivity);
 		inflater.inflate(ResourceUtil.getLayoutId("vsgm_tony_webpay"), this);
-		ImageView logo = (ImageView) findViewById(ResourceUtil
-				.getId("vsgm_tony_center_logo"));
+		ImageView logo = (ImageView) findViewById(ResourceUtil.getId("vsgm_tony_center_logo"));
 		if (Config.isOkgameLogo) {
 			int padding = DensityUtil.dip2px(mActivity, 8);
 			try {
-				logo.setImageResource(ResourceUtil
-						.getDrawableId("vsgm_tony_logo_okgame"));
+				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo_okgame"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		} else if (Config.isGmLogo) {
 			int padding = DensityUtil.dip2px(mActivity, 8);
 			try {
-				logo.setImageResource(ResourceUtil
-						.getDrawableId("vsgm_tony_logo_gamemy"));
+				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo_gamemy"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		} else {
 			int padding = DensityUtil.dip2px(mActivity, 8);
 			try {
-				logo.setImageResource(ResourceUtil
-						.getDrawableId("vsgm_tony_logo"));
+				logo.setImageResource(ResourceUtil.getDrawableId("vsgm_tony_logo"));
 				logo.setPadding(padding, padding, padding, padding);
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		process = findViewById(ResourceUtil.getId("vsgm_tony_pay_process"));
 		process.setOnClickListener(onClickListener);
-		mWebView = (WebView) findViewById(ResourceUtil
-				.getId("vsgm_tony_pay_webview"));
+		mWebView = (WebView) findViewById(ResourceUtil.getId("vsgm_tony_pay_webview"));
 		mWebView.setWebViewClient(mWebViewClient);
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		mWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
@@ -190,14 +187,12 @@ public class PayView extends FrameLayout {
 
 		mWebView.setWebChromeClient(new WebChromeClient() {
 			@Override
-			public boolean onJsConfirm(WebView view, String url,
-					String message, final android.webkit.JsResult result) {
+			public boolean onJsConfirm(WebView view, String url, String message, final android.webkit.JsResult result) {
 				return true;
 			}
 
 			@Override
-			public boolean onJsAlert(WebView view, String url, String message,
-					final android.webkit.JsResult result) {
+			public boolean onJsAlert(WebView view, String url, String message, final android.webkit.JsResult result) {
 				return false;
 			}
 
@@ -207,11 +202,9 @@ public class PayView extends FrameLayout {
 			}
 		});
 
-		findViewById(ResourceUtil.getId("back_btn")).setOnClickListener(
-				onClickListener);
+		findViewById(ResourceUtil.getId("back_btn")).setOnClickListener(onClickListener);
 		// findViewById(ResourceUtil.getId("reload_btn")).setOnClickListener(this);
-		findViewById(ResourceUtil.getId("close_btn")).setOnClickListener(
-				onClickListener);
+		findViewById(ResourceUtil.getId("close_btn")).setOnClickListener(onClickListener);
 
 		// process = new OKgameDialogProcess(mActivity,
 		// findLayoutId("vsgm_tony_process);
@@ -245,8 +238,7 @@ public class PayView extends FrameLayout {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
-				&& event.getAction() == KeyEvent.ACTION_DOWN) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
 			onBackPressed();
 			return true;
 		}

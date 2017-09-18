@@ -189,15 +189,14 @@ public class SPUtil {
 	}
 
 	public static boolean isSendInstall(Context ctx) {
-		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_"
-				+ Config.isTestMode, 0);
+		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_" + Config.isTestMode, 0);
 		return sp.getBoolean(IS_SEND_INSTALL, false);
 	}
 
 	/**
 	 * 保存Order数据
 	 * 
-	 * @param data
+	 * @param orderJson
 	 */
 	public static void saveOrder(JSONObject orderJson, Context ctx) {
 		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_" + Config.isTestMode, 0);
@@ -216,7 +215,6 @@ public class SPUtil {
 				if (order.get(ParameterKey.ORDER_ID).equals(orderJson.get(ParameterKey.ORDER_ID))) {
 					Field valuesField = JSONArray.class.getDeclaredField("values");
 					valuesField.setAccessible(true);
-					@SuppressWarnings("unchecked")
 					List<Object> values = (List<Object>) valuesField.get(array);
 					values.remove(i);
 					break;
@@ -299,8 +297,7 @@ public class SPUtil {
 	}
 
 	public static JSONArray getOrdersLimit50(Context ctx) {
-		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_"
-				+ Config.isTestMode, 0);
+		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_" + Config.isTestMode, 0);
 		String orders = sp.getString(ORDER_KEY, null);
 
 		JSONArray orderList = new JSONArray();
@@ -372,8 +369,7 @@ public class SPUtil {
 	}
 
 	public static int[] getScrollAdMenuOrigin(Context ctx) {
-		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_"
-				+ Config.isTestMode, 0);
+		SharedPreferences sp = ctx.getSharedPreferences(DATA_SAVE_NAME + "_" + Config.isTestMode, 0);
 		int x = sp.getInt("ScrollAdMenuOriginX", -1);
 		int y = sp.getInt("ScrollAdMenuOriginY", -1);
 		if (x < 0 || y < 0)

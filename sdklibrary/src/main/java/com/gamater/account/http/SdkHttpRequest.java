@@ -11,6 +11,7 @@ import com.gamater.common.http.HttpRequest;
 import com.gamater.common.http.MD5;
 import com.gamater.common.http.MVHttpRequest;
 import com.gamater.define.DeviceInfo;
+import com.gamater.sdk.game.GamaterSDK;
 
 public class SdkHttpRequest extends MVHttpRequest {
 	private static final long serialVersionUID = -6633987773270030316L;
@@ -26,7 +27,7 @@ public class SdkHttpRequest extends MVHttpRequest {
 	}
 
 	public static HttpRequest rcLoginRequest(String account, String passwd) {
-		Hashtable<String, String> params = new Hashtable<String, String>();
+		Hashtable<String, String> params = new Hashtable<>();
 		String accessToken = UUID.randomUUID().toString();
 		params.put(Keys.POST_KEY_THIRD_TYPE, ThirdType.rc.toString());
 		params.put(Keys.POST_KEY_THIRD_TOKEN, accessToken);
@@ -38,14 +39,14 @@ public class SdkHttpRequest extends MVHttpRequest {
 	}
 
 	public static SdkHttpRequest forgetPasswd(String email) {
-		Hashtable<String, String> params = new Hashtable<String, String>();
+		Hashtable<String, String> params = new Hashtable<>();
 		params.put(Keys.POST_KEY_EMAIL, email);
 		params.put("ReleasePlatform", Config.gmTitle.toLowerCase());
 		return postRequest(Config.getLoginHost(), APIs.WEB_API_FORGET_PASSWORD, params);
 	}
 
 	public static SdkHttpRequest registerRequest(String email, String passwd) {
-		Hashtable<String, String> params = new Hashtable<String, String>();
+		Hashtable<String, String> params = new Hashtable<>();
 		String pwd = MD5.crypt(passwd);
 		params.put(Keys.POST_KEY_EMAIL, email);
 		params.put(Keys.POST_KEY_PASSWORD, pwd);
@@ -53,7 +54,7 @@ public class SdkHttpRequest extends MVHttpRequest {
 	}
 
 	public static SdkHttpRequest normalLoginRequest(String email, String passwd) {
-		Hashtable<String, String> params = new Hashtable<String, String>();
+		Hashtable<String, String> params = new Hashtable<>();
 		String pwd = MD5.crypt(passwd);
 		params.put(Keys.POST_KEY_EMAIL, email);
 		params.put(Keys.POST_KEY_PASSWORD, pwd);
@@ -61,14 +62,12 @@ public class SdkHttpRequest extends MVHttpRequest {
 	}
 
 	public static SdkHttpRequest quickLoginRequest() {
-		SdkHttpRequest request = SdkHttpRequest.postRequest(
-				Config.getLoginHost(), APIs.WEB_API_FREE_LOGIN);
+		SdkHttpRequest request = SdkHttpRequest.postRequest(Config.getLoginHost(), APIs.WEB_API_FREE_LOGIN);
 		return request;
 	}
 
 	public static HttpRequest eLoginRequest(String userid, String token) {
-		SdkHttpRequest request = SdkHttpRequest.postRequest(
-				Config.getLoginHost(), APIs.WEB_API_LOGIN);
+		SdkHttpRequest request = SdkHttpRequest.postRequest(Config.getLoginHost(), APIs.WEB_API_LOGIN);
 		request.addPostValue(Keys.POST_KEY_USERID, userid);
 		request.addPostValue(Keys.POST_KEY_TOKEN, token);
 		return request;
@@ -78,8 +77,7 @@ public class SdkHttpRequest extends MVHttpRequest {
 		MobUser user = MobUserManager.getInstance().getCurrentUser();
 		if (user == null)
 			return null;
-		SdkHttpRequest request = SdkHttpRequest.postRequest(
-				Config.getLoginHost(), APIs.WEB_API_UPGRADE_ACCOUNT);
+		SdkHttpRequest request = SdkHttpRequest.postRequest(Config.getLoginHost(), APIs.WEB_API_UPGRADE_ACCOUNT);
 		request.addPostValue(Keys.POST_KEY_EMAIL, email);
 		String password = MD5.crypt(passwd);
 		request.addPostValue(Keys.POST_KEY_PASSWORD, password);
@@ -92,8 +90,7 @@ public class SdkHttpRequest extends MVHttpRequest {
 		MobUser user = MobUserManager.getInstance().getCurrentUser();
 		if (user == null)
 			return null;
-		SdkHttpRequest request = SdkHttpRequest.postRequest(
-				Config.getLoginHost(), APIs.WEB_API_CHANGE_PASSWORD);
+		SdkHttpRequest request = SdkHttpRequest.postRequest(Config.getLoginHost(), APIs.WEB_API_CHANGE_PASSWORD);
 		request.addPostValue(Keys.POST_KEY_USERID, user.getUserid());
 		request.addPostValue(Keys.POST_KEY_TOKEN, user.getToken());
 		String npwd = MD5.crypt(npasswd);
@@ -104,7 +101,7 @@ public class SdkHttpRequest extends MVHttpRequest {
 	}
 
 	public static SdkHttpRequest thirdLoginRequest(ThirdType type, String token) {
-		Hashtable<String, String> params = new Hashtable<String, String>();
+		Hashtable<String, String> params = new Hashtable<>();
 		params.put(Keys.POST_KEY_THIRD_TYPE, type.toString());
 		params.put(Keys.POST_KEY_THIRD_TOKEN, token);
 		SdkHttpRequest request = SdkHttpRequest.postRequest(Config.getLoginHost(), APIs.WEB_API_THIRD_LOGIN, params);

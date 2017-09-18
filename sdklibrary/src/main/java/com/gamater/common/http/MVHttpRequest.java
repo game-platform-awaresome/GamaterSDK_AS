@@ -5,10 +5,13 @@ import android.os.Build;
 
 import com.gamater.account.MobUserManager;
 import com.gamater.account.po.MobUser;
+import com.gamater.common.Config;
 import com.gamater.define.DeviceInfo;
 import com.gamater.define.GPOrder;
 import com.gamater.define.PaymentParam;
+import com.gamater.sdk.game.GamaterSDK;
 import com.gamater.util.AppUtil;
+import com.gamater.util.LogUtil;
 
 public class MVHttpRequest extends HttpRequest {
 
@@ -72,7 +75,9 @@ public class MVHttpRequest extends HttpRequest {
 		addHeader(HeadersName.PHONE_MNC, AppUtil.getMNC(c));
 		addHeader(HeadersName.PLATFORM, "android");
 		addHeader(HeadersName.RELEASE_PLATFORM, AppUtil.getReleasePlatform());
-		addHeader(HeadersName.CLIENT_ID, com.gamater.common.Config.clientId);
+		addHeader(HeadersName.CLIENT_ID, Config.clientId);
+        addHeader(HeadersName.AD_ID, GamaterSDK.adid);
+        LogUtil.print("Tobin", GamaterSDK.adid);
 		MobUserManager userManager = MobUserManager.getInstance();
 		if (userManager != null && userManager.getCurrentUser() != null) {
 			MobUser user = userManager.getCurrentUser();

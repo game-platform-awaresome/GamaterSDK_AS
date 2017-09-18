@@ -276,17 +276,6 @@ public class MobUserManager {
 			requestUrls();
 		}
 
-		
-		if (getStatType() == 0) {
-
-		} else if (getStatType() == 1) {
-
-		} else if (getStatType() == 2) {
-
-		} else {
-
-		}
-
 	}
 
 	// private MobUserManager(Context ctx) {
@@ -342,7 +331,6 @@ public class MobUserManager {
 			if (!userList.contains(user))
 				userList.add(user);
 		}
-
 		return userList;
 	}
 
@@ -438,7 +426,6 @@ public class MobUserManager {
 			request.setHttpEventListener(userManagerListener);
 			request.asyncStart();
 		}
-
 	}
 
 	public void weixinLogin(String accessToken, String openid) {
@@ -546,7 +533,6 @@ public class MobUserManager {
 
 			long time = System.currentTimeMillis() / 1000;
 			String timeStr = String.valueOf(time);
-
 			String pwd = MD5.crypt(password);
 
 			request.addPostValue(Keys.POST_KEY_EMAIL, email);
@@ -555,7 +541,6 @@ public class MobUserManager {
 			if (phone != null && phone.length() > 0) {
 				request.addPostValue(Keys.POST_KEY_PHONE, phone);
 			}
-
 			request.addPostValue(Keys.POST_KEY_TIME, timeStr);
 
 			StringBuffer sb = new StringBuffer();
@@ -593,7 +578,6 @@ public class MobUserManager {
 			sb.append(accessToken);
 			sb.append(WebAPI.LOGIN_KEY);
 			sb.append(timeStr);
-
 			String flag = MD5.crypt(sb.toString());
 
 			request.addPostValue(Keys.POST_KEY_FLAG, flag);
@@ -755,10 +739,9 @@ public class MobUserManager {
 							initAppsFlyer();
 						} else if (getStatType() == 2) {
 							initKochava();
-						} else if (getStatType() == 0) {
+						}else {
 							initAppsFlyer();
 							initKochava();
-						} else {
 						}
 
 //						FileDataUtil.saveFileData(ctx, "is_test_mode", "" + Config.isTestMode);

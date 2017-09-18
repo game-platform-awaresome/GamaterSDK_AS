@@ -359,7 +359,6 @@ public class AppUtil {
 	 * @param context
 	 * @param title
 	 * @param text
-	 * @param appId
 	 */
 	public static void shareText(Context context, String title, String text) {
 		Intent intent = new Intent(Intent.ACTION_SEND);
@@ -496,9 +495,8 @@ public class AppUtil {
 	 */
 	public static String getMNC(Context context) {
 		String providersName = "";
-		TelephonyManager telephonyManager = (TelephonyManager) context
-				.getSystemService(Context.TELEPHONY_SERVICE);
-		if (telephonyManager.getSimState() == TelephonyManager.SIM_STATE_READY) {
+		TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+		if (telephonyManager != null && telephonyManager.getSimState() == TelephonyManager.SIM_STATE_READY) {
 			providersName = telephonyManager.getSimOperator();
 			providersName = providersName == null ? "" : providersName;
 		}
@@ -748,9 +746,7 @@ public class AppUtil {
 
 		PackageManager pm = context.getPackageManager();
 		try {
-			ApplicationInfo appInfo = pm.getApplicationInfo(
-					context.getPackageName(), 128);
-
+			ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), 128);
 			if (appInfo != null)
 				return appInfo.metaData;
 		} catch (NameNotFoundException e) {

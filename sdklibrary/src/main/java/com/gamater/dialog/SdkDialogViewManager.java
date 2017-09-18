@@ -86,16 +86,13 @@ public class SdkDialogViewManager {
 		return false;
 	}
 
-	public static void addBaseSdkView(final ViewGroup parentView,
-			final View subView) {
+	public static void addBaseSdkView(final ViewGroup parentView, final View subView) {
 		if (parentView.getChildCount() > 0) {
 			final View oldView = parentView.getChildAt(parentView.getChildCount() - 1);
-			if (oldView.getClass().getName()
-					.equals(subView.getClass().getName())) {
+			if (oldView.getClass().getName().equals(subView.getClass().getName())) {
 				return;
 			}
-			long duration = showEndAnimation(
-					parentView.getChildAt(parentView.getChildCount() - 1), null);
+			long duration = showEndAnimation(parentView.getChildAt(parentView.getChildCount() - 1), null);
 			parentView.postDelayed(new Runnable() {
 				@Override
 				public void run() {
@@ -135,6 +132,7 @@ public class SdkDialogViewManager {
 		try {
 			view.startAnimation(((BaseSdkView) view).getStartAnimation(listener));
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 

@@ -49,6 +49,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			@Override
 			public void didLogout() {
 				Log.e("MainActivity", "didLogout: 切换账号后游戏需要切换到登录界面: ");
+
+
+				GamaterSDK.getInstance().popLoginView();
 			}
 
 			@Override

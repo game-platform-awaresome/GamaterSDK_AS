@@ -13,10 +13,24 @@ android {
         // Enabling multidex support
         multiDexEnabled true
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'gamater'
+            keyPassword '123456'
+            storeFile file('../gamatertest.jks')
+            storePassword '123456'
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     lintOptions {

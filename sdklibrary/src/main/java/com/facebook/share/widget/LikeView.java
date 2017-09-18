@@ -804,12 +804,10 @@ public class LikeView extends FrameLayout {
 	private void updateBoxCountCaretPosition() {
 		switch (auxiliaryViewPosition) {
 		case TOP:
-			likeBoxCountView
-					.setCaretPosition(LikeBoxCountView.LikeBoxCountViewCaretPosition.BOTTOM);
+			likeBoxCountView.setCaretPosition(LikeBoxCountView.LikeBoxCountViewCaretPosition.BOTTOM);
 			break;
 		case BOTTOM:
-			likeBoxCountView
-					.setCaretPosition(LikeBoxCountView.LikeBoxCountViewCaretPosition.TOP);
+			likeBoxCountView.setCaretPosition(LikeBoxCountView.LikeBoxCountViewCaretPosition.TOP);
 			break;
 		case INLINE:
 			likeBoxCountView

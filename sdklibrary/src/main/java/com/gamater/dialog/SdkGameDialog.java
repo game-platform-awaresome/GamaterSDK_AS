@@ -113,7 +113,7 @@ public class SdkGameDialog extends Dialog {
 		}
 		viewTitle = (TextView) findViewById(ResourceUtil.getId("vsgm_tony_title"));
 
-		BaseSdkView sdkView = null;
+		BaseSdkView sdkView;
 		if (type == ViewType.UpdateAccount) {
 			sdkView = UpdateAccountView.createView(getContext());
 		} else if (type == ViewType.ChangePassword) {
@@ -274,14 +274,17 @@ public class SdkGameDialog extends Dialog {
 				manager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
-	public boolean shouldHandleEvent(MotionEvent ev) {
-		if (isTouchEditText((ViewGroup) this.rootView, ev)) {
-			return false;
-		}
-		return true;
+	private boolean shouldHandleEvent(MotionEvent ev) {
+		return !isTouchEditText(this.rootView, ev);
+//		if (isTouchEditText(this.rootView, ev)) {
+//			return false;
+//		}else {
+//			return true;
+//		}
 	}
 
 	private boolean isTouchEditText(ViewGroup paramViewGroup, MotionEvent paramMotionEvent) {
@@ -298,13 +301,13 @@ public class SdkGameDialog extends Dialog {
 					int k = arrayOfInt[1];
 					int m = k + localView.getHeight();
 					int n = j + localView.getWidth();
-					if ((paramMotionEvent.getX() > j) && (paramMotionEvent.getX() < n) && (paramMotionEvent.getY() > k)
-							&& (paramMotionEvent.getY() < m)) {
+					if ((paramMotionEvent.getX() > j) && (paramMotionEvent.getX() < n) && (paramMotionEvent.getY() > k) && (paramMotionEvent.getY() < m)) {
 						return true;
 					}
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return false;
 	}

@@ -66,6 +66,8 @@ public class FloatMenu extends FrameLayout {
 			} else if (v.getId() == ResourceUtil.getId("tvService")) {
 //                EventTracker.btnClickEvent(4);
 				SdkViewOpenHelper.openServiceDialog();
+
+//				Support.startFAQs(mActivity);
 			}
 		}
 	};

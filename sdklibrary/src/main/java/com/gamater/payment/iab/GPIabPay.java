@@ -160,6 +160,7 @@ public class GPIabPay {
 				}
 				return;
 			}
+
 			consumePurchase(purchase);
 		}
 	};
@@ -183,7 +184,8 @@ public class GPIabPay {
 						String oid = order.getOrderId();
 						if (oid.equalsIgnoreCase(orderId)) {
 							order.setPayToken(purchase.getToken());
-							order.setGoogleOrderId(purchase.getOrderId());
+
+
 							SPUtil.saveOrder(order.toJSON(), activity);
 							GamaterIAB.getInstance().paymentValidate(order);
 
@@ -209,8 +211,8 @@ public class GPIabPay {
 	}
 
 	public void consumePurchase(Purchase purchase) {
-		EventTracker.payEvent(1001, purchase);
 		savePurchase(purchase);
+		EventTracker.payEvent(1001, purchase);
 		if (helper != null)
 			helper.consumeAsync(purchase, mConsumeFinishedListener);
 	}
@@ -317,6 +319,7 @@ public class GPIabPay {
 				sp.edit().putString(SPUtil.PURCHASE_KEY, object.toString()).commit();
 			}
 		} catch (JSONException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -334,13 +337,14 @@ public class GPIabPay {
 				sp.edit().putString(SPUtil.PURCHASE_KEY, object.toString()).commit();
 			}
 		} catch (JSONException e) {
+			e.printStackTrace();
 		}
 	}
 
 	public static List<Purchase> getAllPurchases(Context ctx) {
 		SharedPreferences sp = ctx.getSharedPreferences(SPUtil.DATA_SAVE_NAME, 0);
 		String purchasesStr = sp.getString(SPUtil.PURCHASE_KEY, null);
-		List<Purchase> result = new ArrayList<Purchase>();
+		List<Purchase> result = new ArrayList<>();
 		try {
 			JSONObject object;
 			if (purchasesStr == null) {
@@ -352,7 +356,9 @@ public class GPIabPay {
 				result.add(new Purchase().initWithJson(object.getJSONObject(i.next().toString())));
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		} catch (Error e) {
+			e.printStackTrace();
 		}
 		return result;
 	}

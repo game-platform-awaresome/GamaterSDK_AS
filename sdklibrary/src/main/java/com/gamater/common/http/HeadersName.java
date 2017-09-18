@@ -68,4 +68,6 @@ public class HeadersName {
 	public static final String PLATFORM = PRFIX + "platform";
 
 	public static final String RELEASE_PLATFORM = PRFIX + "releasePlatform";
+
+	public static final String AD_ID = PRFIX + "adid";
 }

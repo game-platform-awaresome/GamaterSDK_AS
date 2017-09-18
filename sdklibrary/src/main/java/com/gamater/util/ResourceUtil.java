@@ -23,8 +23,7 @@ public class ResourceUtil {
 	public static int getStringId(String paramString) {
 		if (sContext == null)
 			return 0;
-		if ("vsgm_tony_dialog_info".equalsIgnoreCase(paramString)
-				|| "paytype_select_title".equalsIgnoreCase(paramString)) {
+		if ("vsgm_tony_dialog_info".equalsIgnoreCase(paramString) || "paytype_select_title".equalsIgnoreCase(paramString)) {
 			if (Config.isOkgameLogo)
 				paramString = "vsgm_tony_okgame_dialog_title";
 			else if (Config.isGmLogo)
@@ -32,8 +31,7 @@ public class ResourceUtil {
 			else
 				paramString = "vsgm_tony_dialog_info";
 		}
-		return sContext.getResources().getIdentifier(paramString, "string",
-				sContext.getPackageName());
+		return sContext.getResources().getIdentifier(paramString, "string", sContext.getPackageName());
 	}
 
 	public static int getDrawableId(String paramString) {
@@ -45,15 +43,13 @@ public class ResourceUtil {
 	public static int getStyleId(String paramString) {
 		if (sContext == null)
 			return 0;
-		return sContext.getResources().getIdentifier(paramString, "style",
-				sContext.getPackageName());
+		return sContext.getResources().getIdentifier(paramString, "style", sContext.getPackageName());
 	}
 
 	public static int getId(String paramString) {
 		if (sContext == null)
 			return 0;
-		return sContext.getResources().getIdentifier(paramString, "id",
-				sContext.getPackageName());
+		return sContext.getResources().getIdentifier(paramString, "id", sContext.getPackageName());
 	}
 
 	public static int getColorId(String paramString) {
@@ -65,8 +61,7 @@ public class ResourceUtil {
 	public static int getDimenId(String paramString) {
 		if (sContext == null)
 			return 0;
-		return sContext.getResources().getIdentifier(paramString, "dimen",
-				sContext.getPackageName());
+		return sContext.getResources().getIdentifier(paramString, "dimen", sContext.getPackageName());
 	}
 
 	public static int getAnimId(String paramString) {
@@ -83,6 +78,7 @@ public class ResourceUtil {
 			int[] ret = (int[]) field.get(null);
 			return ret;
 		} catch (Throwable t) {
+            t.printStackTrace();
 		}
 		return null;
 	}
@@ -96,6 +92,7 @@ public class ResourceUtil {
 			int ret = (Integer) field.get(null);
 			return ret;
 		} catch (Throwable t) {
+			t.printStackTrace();
 		}
 		return 0;
 	}

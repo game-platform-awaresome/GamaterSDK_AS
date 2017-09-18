@@ -56,7 +56,7 @@ import com.gamater.sdk.facebook.FbShareCallback;
 import com.gamater.util.FileDataUtil;
 import com.gamater.util.LogUtil;
 import com.gamater.util.ResourceUtil;
-import com.google.ads.conversiontracking.AdWordsConversionReporter;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.tony.facebook.SdkFacebookDialog;
 import com.tony.floatmenu.SDKMenuManager;
 
@@ -79,8 +79,18 @@ public class GamaterSDK {
 		this.context = context;
 	}
 
-	public static synchronized GamaterSDK initSDK(Activity activity, String clientId, boolean isShowLog) {
-
+	public static String adid;
+	public static synchronized GamaterSDK initSDK(final Activity activity, String clientId, boolean isShowLog) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					adid = AdvertisingIdClient.getAdvertisingIdInfo(activity).getId();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
 		if (m_instance == null) {
 			try {
 				m_instance = new GamaterSDK(activity, clientId, isShowLog);
@@ -103,9 +113,10 @@ public class GamaterSDK {
 		return m_instance;
 	}
 
-	public void setAdWords(String id, String tag, String money) {
-		AdWordsConversionReporter.reportWithConversionId(activity.getApplicationContext(), id, tag, money, false);
-	}
+	// GoogleConversionTrackingSdk-2.2.4.jar
+//	public void setAdWords(String id, String tag, String money) {
+//		AdWordsConversionReporter.reportWithConversionId(activity.getApplicationContext(), id, tag, money, false);
+//	}
 
 	public void setConfig(boolean isShowLog, String clientId) {
 		Config.isShowLog = isShowLog;
@@ -133,7 +144,7 @@ public class GamaterSDK {
 			@Override
 			public void run() {
 				mainHandler = new Handler();
-				InstallReceiver.sendInstall(activity, mainHandler, 1000);
+				InstallReceiver.sendInstall(activity, mainHandler, 10000);
 			}
 		});
 
@@ -166,12 +177,12 @@ public class GamaterSDK {
 //			AppsFlyerLib.setAppsFlyerKey("n9EW6sqgVTYsmSpfqyKqNL");
 //			AppsFlyerLib.setAppUserId(MD5.crypt(info.getPackageName() + info.getAndroidId() + info.getIMEI()));
 //			AppsFlyerLib.sendTracking(this.activity);
-//			
+//
 //			// AppsFlyerLib.getInstance().setImeiData(info.getIMEI());
 //			// AppsFlyerLib.getInstance().setAndroidIdData(info.getAndroidId());
 //			// AppsFlyerLib.getInstance().setCustomerUserId(MD5.crypt(info.getPackageName() + info.getAndroidId() + info.getIMEI()));
 //			// AppsFlyerLib.getInstance().startTracking(activity.getApplication(), "n9EW6sqgVTYsmSpfqyKqNL");
-//			
+//
 //		} catch (Exception e) {
 //			alertMessage("Appsflyer 初始化异常，请检查jar是否正常引入", false);
 //		} catch (Error e) {
@@ -395,9 +406,6 @@ public class GamaterSDK {
 	}
 
 	public void logout() {
-		if (acgameSDKListener != null) {
-			acgameSDKListener.didLogout();
-		}
 		SdkDialogViewManager.dialogDismiss();
 		SdkDialogViewManager.destory();
 		Config.payType = 1;
@@ -405,6 +413,9 @@ public class GamaterSDK {
 		MobUserManager.getInstance().setRankDataUpload(false);
 		SDKMenuManager manager = SDKMenuManager.getInstance(activity);
 		GoogleGameLoginHelper.getInstance().logout();
+		if (acgameSDKListener != null) {
+			acgameSDKListener.didLogout();
+		}
 		if (manager != null) {
 			manager.updateMenuStatus();
 			manager.hideMenuView();

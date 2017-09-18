@@ -1,10 +1,10 @@
 package com.gamater.define;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
+import java.util.concurrent.Executors;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,6 +25,8 @@ import android.view.Display;
 
 import com.gamater.common.http.MD5;
 import com.gamater.util.ResourceUtil;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+
 
 /**
  * 獲取設備資料的類
@@ -53,6 +55,7 @@ public class DeviceInfo {
 		try {
 			initDisplaySize((Activity) a);
 		} catch (Exception e) {
+            e.printStackTrace();
 		}
 	}
 
@@ -82,8 +85,7 @@ public class DeviceInfo {
 			return appVersionCode;
 		try {
 			PackageManager manager = mContext.getPackageManager();
-			PackageInfo info = manager.getPackageInfo(
-					mContext.getPackageName(), 0);
+			PackageInfo info = manager.getPackageInfo(mContext.getPackageName(), 0);
 			appVersionCode = info.versionCode + "";
 		} catch (Exception e) {
 		}
@@ -97,8 +99,7 @@ public class DeviceInfo {
 			return appVersionName;
 		try {
 			PackageManager manager = mContext.getPackageManager();
-			PackageInfo info = manager.getPackageInfo(
-					mContext.getPackageName(), 0);
+			PackageInfo info = manager.getPackageInfo(mContext.getPackageName(), 0);
 			appVersionName = info.versionName;
 		} catch (Exception e) {
 		}
@@ -122,18 +123,17 @@ public class DeviceInfo {
 
 	public String getPhoneNumber() {
 		try {
-			TelephonyManager telephonyManager = (TelephonyManager) instance
-					.getContext().getSystemService(Context.TELEPHONY_SERVICE);
+			TelephonyManager telephonyManager = (TelephonyManager) instance.getContext().getSystemService(Context.TELEPHONY_SERVICE);
 			String phone = telephonyManager.getLine1Number();
 			return phone == null ? "" : phone;
 		} catch (Exception e) {
+            e.printStackTrace();
 		}
 		return "";
 	}
 
 	public String getCountryCode() {
-		TelephonyManager tm = (TelephonyManager) instance.getContext()
-				.getSystemService(Context.TELEPHONY_SERVICE);
+		TelephonyManager tm = (TelephonyManager) instance.getContext().getSystemService(Context.TELEPHONY_SERVICE);
 		return tm.getNetworkCountryIso();
 	}
 
@@ -170,34 +170,28 @@ public class DeviceInfo {
 
 	public String getSystemLanguage() {
 		if (instance.mContext != null)
-			return instance.mContext.getResources().getConfiguration().locale
-					.toString();
+			return instance.mContext.getResources().getConfiguration().locale.toString();
 		return null;
 	}
 
 	private String getLocalMacAddressFromBusybox() {
 		try {
-			WifiManager wifi = (WifiManager) instance.getContext()
-					.getSystemService(Context.WIFI_SERVICE);
-
+			WifiManager wifi = (WifiManager) instance.getContext().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 			WifiInfo info = wifi.getConnectionInfo();
-
 			return info.getMacAddress();
 		} catch (Exception e) {
-			return "";
+			e.printStackTrace();
 		}
+		return "";
 	}
 
 	private String getLocalIpAddress() {
 		try {
-			for (Enumeration<NetworkInterface> en = NetworkInterface
-					.getNetworkInterfaces(); en.hasMoreElements();) {
+			for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
 				NetworkInterface intf = en.nextElement();
-				for (Enumeration<InetAddress> enumIpAddr = intf
-						.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+				for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
 					InetAddress inetAddress = enumIpAddr.nextElement();
-					if (!inetAddress.isLoopbackAddress()
-							&& !inetAddress.isLinkLocalAddress()) {
+					if (!inetAddress.isLoopbackAddress() && !inetAddress.isLinkLocalAddress()) {
 						return inetAddress.getHostAddress().toString();
 					}
 				}
@@ -212,9 +206,7 @@ public class DeviceInfo {
 	public String getNetType() {
 		String netType = "";
 		try {
-			ConnectivityManager connMgr = (ConnectivityManager) instance
-					.getContext()
-					.getSystemService(Context.CONNECTIVITY_SERVICE);
+			ConnectivityManager connMgr = (ConnectivityManager) instance.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 			NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
 			if (networkInfo == null) {
@@ -228,9 +220,7 @@ public class DeviceInfo {
 				// } else {
 				// netType = "CMWAP";
 				// }
-				final Cursor c = mContext.getContentResolver().query(
-						Uri.parse("content://telephony/carriers/preferapn"),
-						null, null, null, null);
+				final Cursor c = mContext.getContentResolver().query(Uri.parse("content://telephony/carriers/preferapn"), null, null, null, null);
 				if (c != null) {
 					c.moveToFirst();
 					final String user = c.getString(c.getColumnIndex("user"));
@@ -256,16 +246,13 @@ public class DeviceInfo {
 	public String getCampaign() {
 		String gpCampaign = SPUtil.getCampaign(instance.getContext());
 		if (gpCampaign == null) {
-			String appCampaign = getStringMetaData(instance.getContext(),
-					"OKGAME_CAMPAIGN");
+			String appCampaign = getStringMetaData(instance.getContext(), "OKGAME_CAMPAIGN");
 			if (appCampaign == null || appCampaign.length() == 0)
 				appCampaign = "other";
 			return appCampaign;
 		}
 		return gpCampaign;
 	}
-	
-
 
 	public static String getStringMetaData(Context context, String key) {
 		Bundle metaData = getMetaData(context);
@@ -279,20 +266,20 @@ public class DeviceInfo {
 		if (context == null) {
 			return null;
 		}
-
 		PackageManager pm = context.getPackageManager();
 		try {
-			ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), 128);
+			ApplicationInfo appInfo = pm.getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
 			if (appInfo != null)
 				return appInfo.metaData;
 		} catch (PackageManager.NameNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 
 	public String getCustomerId() {
 		return MD5.crypt(getPackageName() + getAndroidId() + getIMEI());
 	}
+
+
 }

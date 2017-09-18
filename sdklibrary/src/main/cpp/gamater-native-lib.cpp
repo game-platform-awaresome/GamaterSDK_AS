@@ -4,14 +4,17 @@
 
 jstring getSignature(JNIEnv *env, jobject context) {
     jclass contextClass = env->FindClass("android/content/Context");
+    //context.getPackageManager()
     jmethodID getPmMethod = env->GetMethodID(contextClass, "getPackageManager", "()Landroid/content/pm/PackageManager;");
     jobject pmObject = env->CallObjectMethod(context, getPmMethod);
 
     jclass pmClass = env->FindClass("android/content/pm/PackageManager");
+    //得到 getPackageInfo 方法的 ID
     jmethodID getPackageInfoMethod = env->GetMethodID(pmClass, "getPackageInfo", "(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;");
 
     jmethodID getPackageNameMethod = env->GetMethodID(contextClass, "getPackageName", "()Ljava/lang/String;");
     jobject pkgName = env->CallObjectMethod(context, getPackageNameMethod);
+    // 获得应用包的信息
     jobject pkgInfo = env->CallObjectMethod(pmObject, getPackageInfoMethod, pkgName, 64);
 
     jclass packageInfoClass = env->FindClass("android/content/pm/PackageInfo");

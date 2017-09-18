@@ -3,15 +3,15 @@ package com.gamater.payment;
 import com.gamater.define.GPOrder;
 
 public interface GamaterIABListener {
-	public void setupHelperFailed();
+	void setupHelperFailed();
 
-	public void paymentStart(String sku);
+	void paymentStart(String sku);
 
-	public void paymentFailed(String result);
+	void paymentFailed(String result);
 
-	public void paymentSuccess(GPOrder order);
+	void paymentSuccess(GPOrder order);
 
-	public void otherPaymentFinish();
+	void otherPaymentFinish();
 
-	public void onPayType(int type);
+	void onPayType(int type);
 }

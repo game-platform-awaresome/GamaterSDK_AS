@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.TreeMap;
 
-import org.apache.http.ParseException;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -122,7 +121,6 @@ public class HttpRequest extends Thread implements Serializable {
 			if (funcation != null && funcation.length() > 0) {
 				sb.append(funcation);
 			}
-
 			this.url = sb.toString();
 			this.httpClient = getHttpClient();
 		} catch (Exception e) {
@@ -134,22 +132,23 @@ public class HttpRequest extends Thread implements Serializable {
 		return MVHttpClient.getHttpClient();
 	}
 
-	/**
-	 * 添加一个Post值
-	 * 
-	 * @param key
-	 *            参数名
-	 * @param value
-	 *            参数值
-	 */
+
 	// private FormEncodingBuilder postBodyBuilder = new FormEncodingBuilder();
-	private TreeMap<String, String> postData = new TreeMap<String, String>(
+	private TreeMap<String, String> postData = new TreeMap<>(
 			new Comparator<String>() {
 				public int compare(String key1, String key2) {
 					return key1.compareTo(key2);
 				}
 			});
 
+	/**
+	 * 添加一个Post值
+	 *
+	 * @param key
+	 *            参数名
+	 * @param value
+	 *            参数值
+	 */
 	public void addPostValue(String key, String value) {
 		if (key != null && key.length() > 0)
 			postData.put(key, "" + value);
@@ -190,7 +189,7 @@ public class HttpRequest extends Thread implements Serializable {
 		long startTime = System.currentTimeMillis();
 		String result = null;
 		try {
-			Response rsp = null;
+			Response rsp;
 			if (method.equalsIgnoreCase("GET")) {
 
 				mCall = httpClient.newCall(builder.url(url).build());
@@ -257,7 +256,7 @@ public class HttpRequest extends Thread implements Serializable {
 	}
 
 	public static String makeSignature(Context ctx, Hashtable<String, String> data, String signatureKey) {
-		TreeMap<String, String> postData = new TreeMap<String, String>(
+		TreeMap<String, String> postData = new TreeMap<>(
 				new Comparator<String>() {
 					public int compare(String key1, String key2) {
 						return key1.compareTo(key2);
@@ -276,7 +275,7 @@ public class HttpRequest extends Thread implements Serializable {
 				int index = 0;
 				String[] params = new String[size];
 				for (String key : data.keySet()) {
-					if (!key.equals(signatureKey)) {
+					if (!key.equals(signatureKey)) { // key != flag
 						params[index] = data.get(key).trim();
 						json.put(key, "" + params[index]);
 						index++;
@@ -301,7 +300,7 @@ public class HttpRequest extends Thread implements Serializable {
 			Bundle successBundle = new Bundle();
 			successBundle.putString(KEY_METHOD, funcation);
 			successBundle.putString(RESPONSE_OBJ, result);
-			successBundle.putSerializable(SELF_OBJ, (Serializable) this);
+			successBundle.putSerializable(SELF_OBJ, this);
 
 			successMsg.what = REQUEST_SUCCESS;
 			successMsg.obj = httpEventListener;
@@ -313,7 +312,7 @@ public class HttpRequest extends Thread implements Serializable {
 			}
 
 			// reportResponseTime(url, null, result, responseTime);
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -368,15 +367,16 @@ public class HttpRequest extends Thread implements Serializable {
 			SPUtil.addResponseTime(GamaterSDK.getInstance().getActivity(), function, e, result, rspTime);
 			CrashHandler.sendResponseTime(GamaterSDK.getInstance().getActivity());
 		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 
 	public interface HttpEventListener {
-		public void requestDidSuccess(HttpRequest httpRequest, String result);
+		void requestDidSuccess(HttpRequest httpRequest, String result);
 
-		public void requestDidStart(HttpRequest httpRequest);
+		void requestDidStart(HttpRequest httpRequest);
 
-		public void requestDidFailed(HttpRequest httpRequest);
+		void requestDidFailed(HttpRequest httpRequest);
 	}
 
 }

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.appsflyer.MultipleInstallBroadcastReceiver;
+import com.gamater.account.MobUserManager;
 import com.kochava.android.tracker.ReferralCapture;
 
 /*
@@ -19,7 +20,8 @@ public class MasterReferrerReceiver extends BroadcastReceiver {
 		// Pass the intent to other receivers.
 		new InstallReceiver().onReceive(context, intent);
 		// appsflyer 统计
-		new MultipleInstallBroadcastReceiver().onReceive(context, intent);
+		if(MobUserManager.getInstance() != null && MobUserManager.getInstance().getStatType() == 1)
+			new MultipleInstallBroadcastReceiver().onReceive(context, intent);
 
 		// Pass the intent to the Kochava receiver.
 		new ReferralCapture().onReceive(context, intent);

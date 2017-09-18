@@ -16,6 +16,7 @@ import com.gamater.common.http.WebAPI;
 import com.gamater.define.DeviceInfo;
 import com.gamater.define.ParameterKey;
 import com.gamater.define.SPUtil;
+import com.gamater.util.LogUtil;
 
 public class InstallReceiver extends BroadcastReceiver {
 	private static final String INSTALL_API = "/tracking/install";

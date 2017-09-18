@@ -71,18 +71,14 @@ public class GamaterIAB implements HttpEventListener {
 		this.context = context;
 	}
 
-	public synchronized static GamaterIAB getInstance(Activity activity,
-													  List<String> skus, boolean isShowLog) {
-
+	public synchronized static GamaterIAB getInstance(Activity activity, List<String> skus, boolean isShowLog) {
 		if (m_instance == null) {
 			m_instance = new GamaterIAB(activity, skus, isShowLog);
 		}
-
 		return m_instance;
 	}
 
-	public synchronized static GamaterIAB getInstance(Activity activity,
-													  boolean isShowLog) {
+	public synchronized static GamaterIAB getInstance(Activity activity, boolean isShowLog) {
 		return getInstance(activity, null, isShowLog);
 	}
 
@@ -113,6 +109,7 @@ public class GamaterIAB implements HttpEventListener {
 		try {
 			GPIabPay.getInstance().setupIabHelper(enableDebugLogging);
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -140,7 +137,6 @@ public class GamaterIAB implements HttpEventListener {
 
 	public void paymentOther(Activity activity, PaymentParam param) {
 		if (activity != null)
-
 			WebPay.init(activity).payment(param);
 		else
 			paymentOther(param);
@@ -152,14 +148,16 @@ public class GamaterIAB implements HttpEventListener {
 	}
 
 	public void payment(final PaymentParam param) {
-		LogUtil.printLog(("payment type : " + Config.payType) + "  PaymentParam: " + (param == null ? "param is null" : (param.getSku() == null ? "productId is null" : param.getSku())));
+		LogUtil.printLog(("payment type : " + Config.payType) + "  PaymentParam: " +
+				(param == null ? "param is null" : (param.getSku() == null ? "productId is null" : param.getSku())));
 		this.currentActivity.runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
 				if (Config.payType == 1) {
 					paymentGpIab(param);
 				} else if (Config.payType == 2) {
-					AlertDialog.Builder builder = DialogUtil.showDialog(currentActivity, Config.gmTitle, currentActivity.getString(ResourceUtil.getStringId("paytype_select_msg")));
+					AlertDialog.Builder builder = DialogUtil.showDialog(currentActivity,
+							Config.gmTitle, currentActivity.getString(ResourceUtil.getStringId("paytype_select_msg")));
 					builder.setNegativeButton(currentActivity.getString(ResourceUtil.getStringId("paytype_gp")),
 							new OnClickListener() {
 								@Override

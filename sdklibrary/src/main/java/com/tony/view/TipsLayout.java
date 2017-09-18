@@ -40,10 +40,8 @@ public class TipsLayout extends RelativeLayout {
 	public TipsLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		this.mcontext = context;
-		LayoutInflater inflater = (LayoutInflater) context
-				.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-		mLoadingView = inflater.inflate(
-				ResourceUtil.getLayoutId("vsgm_tony_process"), null);
+		LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+		mLoadingView = inflater.inflate(ResourceUtil.getLayoutId("vsgm_tony_process"), null);
 		// mLoadingView.setBackgroundColor(Color.WHITE);
 		mLoadFaileView = inflater.inflate(
 				ResourceUtil.getLayoutId("vsgm_tony_load_failed"), null);
@@ -91,8 +89,7 @@ public class TipsLayout extends RelativeLayout {
 			getChildAt(1).setVisibility(View.VISIBLE);
 			mFailedTv.setVisibility(View.VISIBLE);
 			mFailedBtn.setVisibility(View.VISIBLE);
-			mFailedTv.setText(mcontext.getResources().getString(
-					ResourceUtil.getStringId("vsgm_tony_load_wrong")));
+			mFailedTv.setText(mcontext.getResources().getString(ResourceUtil.getStringId("vsgm_tony_load_wrong")));
 			break;
 		case TYPE_CUSTOM_VIEW:
 			// 显示自定义页面
@@ -104,16 +101,14 @@ public class TipsLayout extends RelativeLayout {
 			getChildAt(1).setVisibility(View.VISIBLE);
 			mFailedTv.setVisibility(View.VISIBLE);
 			mFailedBtn.setVisibility(View.VISIBLE);
-			mFailedTv.setText(mcontext.getResources().getString(
-					ResourceUtil.getStringId("vsgm_tony_err_unknown")));
+			mFailedTv.setText(mcontext.getResources().getString(ResourceUtil.getStringId("vsgm_tony_err_unknown")));
 			break;
 		case LOAD_SUCCESS_NO_DATA:
 			// 加载完成，但是没有数据
 			getChildAt(1).setVisibility(View.VISIBLE);
 			mFailedTv.setVisibility(View.VISIBLE);
 			mFailedBtn.setVisibility(View.GONE);
-			mFailedTv.setText(mcontext.getResources().getString(
-					ResourceUtil.getStringId("vsgm_tony_load_no_data")));
+			mFailedTv.setText(mcontext.getResources().getString(ResourceUtil.getStringId("vsgm_tony_load_no_data")));
 			break;
 		}
 
@@ -141,11 +136,8 @@ public class TipsLayout extends RelativeLayout {
 	 */
 	public void setCustomView(View customTipsView) {
 		if (getChildCount() == 2) {
-			LayoutParams rlp = new LayoutParams(
-					LayoutParams.MATCH_PARENT,
-					LayoutParams.MATCH_PARENT);
+			LayoutParams rlp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 			rlp.addRule(RelativeLayout.CENTER_IN_PARENT);
-
 			addView(customTipsView, rlp);
 		}
 	}
